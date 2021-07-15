@@ -91,6 +91,44 @@ class _LoginState extends State<Login> {
                     ),
                     SizedBox(height: 70.0),
                     Padding(
+                      padding: EdgeInsets.symmetric(horizontal:20.0),
+                      child: Container(
+                        padding: EdgeInsets.only(left: 10.0),
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200].withOpacity(0.3),
+                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                        ),
+                        child: InternationalPhoneNumberInput(
+                          textStyle: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          autoValidate: false,
+                          selectorTextStyle: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          initialValue: number,
+                          textFieldController: controller,
+                          inputBorder: InputBorder.none,
+                          inputDecoration: InputDecoration(
+                            contentPadding: EdgeInsets.only(left: 20.0),
+                            hintText: 'Email',
+                            hintStyle: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            border: InputBorder.none,
+                          ),
+                          selectorType: PhoneInputSelectorType.DIALOG,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 10.0),
+                    Padding(
                       padding: EdgeInsets.all(20.0),
                       child: Container(
                         padding: EdgeInsets.only(left: 10.0),
@@ -115,7 +153,7 @@ class _LoginState extends State<Login> {
                           inputBorder: InputBorder.none,
                           inputDecoration: InputDecoration(
                             contentPadding: EdgeInsets.only(left: 20.0),
-                            hintText: 'Phone Number',
+                            hintText: 'Password',
                             hintStyle: TextStyle(
                               color: Colors.white,
                               fontSize: 16.0,
@@ -127,7 +165,7 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 30.0),
+
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20.0),
                       child: InkWell(
@@ -167,6 +205,7 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                     ),
+
                     SizedBox(height: 10.0),
                     Text(
                       'We\'ll send OTP for Verification',
