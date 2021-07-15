@@ -102,8 +102,10 @@ class _LoginState extends State<Login> {
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 28.0),
                           child: TextField(
-                            obscureText: true,
+                            style: TextStyle(color: white),
+                            obscureText: false,
                             decoration: InputDecoration(
+                              border: InputBorder.none,
                               labelText: 'Email',
                                 labelStyle:  TextStyle(
                                   color: white,
@@ -168,7 +170,7 @@ class _LoginState extends State<Login> {
                             'Login',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 16.0,
+                              fontSize: 18.0,
                               fontWeight: FontWeight.w600,
                             ),
                           ),

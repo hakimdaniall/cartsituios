@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Timer(
-        Duration(seconds: 1),
+        Duration(seconds: 500),
         () => Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => Login()),
@@ -85,7 +85,7 @@ class _SplashScreenState extends State<SplashScreen> {
                                 'Better Than Ever Before',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 36.0,
+                                  fontSize: 32.0,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
@@ -112,10 +112,10 @@ class _SplashScreenState extends State<SplashScreen> {
                                       context,
                                       PageTransition(
                                           type: PageTransitionType.rightToLeft,
-                                          child: Register()));
+                                          child: Login()));
                                 },
                                 child: Container(
-                                  height: 53.0,
+                                  height: 50.0,
                                   width: double.infinity,
                                   alignment: Alignment.center,
                                   decoration: BoxDecoration(
@@ -134,7 +134,7 @@ class _SplashScreenState extends State<SplashScreen> {
                                   child: Text(
                                     'Login',
                                     style: TextStyle(
-                                      color: primary,
+                                      color: Color(0xFFDA0037),
                                       fontSize: 22.0,
                                       fontWeight: FontWeight.w700,
                                     ),
@@ -155,19 +155,18 @@ class _SplashScreenState extends State<SplashScreen> {
                                           child: Register()));
                                 },
                                 child: Container(
-                                  height: 53.0,
+                                  height: 50.0,
                                   width: double.infinity,
                                   alignment: Alignment.center,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(30.0),
                                     gradient: LinearGradient(
-                                      begin: Alignment.centerLeft,
-                                      end: Alignment.bottomRight,
-                                      stops: [0.1, 0.5, 0.9],
+                                      begin: Alignment.topCenter,
+                                      end: Alignment.bottomCenter,
+                                      stops: [0.1, 0.9],
                                       colors: [
-                                        Colors.red[300].withOpacity(0.8),
-                                        Colors.red[500].withOpacity(0.8),
-                                        Colors.red[800].withOpacity(0.8),
+                                        Color(0xFFFC2D55).withOpacity(0.8),
+                                        Color(0xFF712E3E).withOpacity(0.8),
                                       ],
                                     ),
                                   ),
