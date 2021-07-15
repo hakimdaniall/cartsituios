@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:tiktok_ui/pages/login_signup/register.dart';
+import 'package:tiktok_ui/theme/colors.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -65,9 +66,9 @@ class _LoginState extends State<Login> {
                 body: ListView(
                   physics: BouncingScrollPhysics(),
                   children: <Widget>[
-                    SizedBox(height: 30.0),
+                    SizedBox(height: 450.0),
                     Padding(
-                      padding: EdgeInsets.only(top: 20.0, left: 20.0),
+                      padding: EdgeInsets.only(top: 20.0, left: 30.0),
                       child: Text(
                         'Welcome back',
                         style: TextStyle(
@@ -79,7 +80,7 @@ class _LoginState extends State<Login> {
                     ),
                     SizedBox(height: 10.0),
                     Padding(
-                      padding: EdgeInsets.only(left: 20.0),
+                      padding: EdgeInsets.only(left: 30.0),
                       child: Text(
                         'Login in your account',
                         style: TextStyle(
@@ -89,7 +90,7 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 70.0),
+                    SizedBox(height: 30.0),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal:20.0),
                       child: Container(
@@ -98,74 +99,44 @@ class _LoginState extends State<Login> {
                           color: Colors.grey[200].withOpacity(0.3),
                           borderRadius: BorderRadius.all(Radius.circular(20.0)),
                         ),
-                        child: InternationalPhoneNumberInput(
-                          textStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w500,
-                          ),
-                          autoValidate: false,
-                          selectorTextStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w500,
-                          ),
-                          initialValue: number,
-                          textFieldController: controller,
-                          inputBorder: InputBorder.none,
-                          inputDecoration: InputDecoration(
-                            contentPadding: EdgeInsets.only(left: 20.0),
-                            hintText: 'Email',
-                            hintStyle: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.w500,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 28.0),
+                          child: TextField(
+                            obscureText: true,
+                            decoration: InputDecoration(
+                              labelText: 'Email',
+                                labelStyle:  TextStyle(
+                                  color: white,
+                                ),
                             ),
-                            border: InputBorder.none,
                           ),
-                          selectorType: PhoneInputSelectorType.DIALOG,
                         ),
                       ),
                     ),
                     SizedBox(height: 10.0),
                     Padding(
-                      padding: EdgeInsets.all(20.0),
+                      padding: EdgeInsets.symmetric(horizontal:20.0),
                       child: Container(
                         padding: EdgeInsets.only(left: 10.0),
                         decoration: BoxDecoration(
                           color: Colors.grey[200].withOpacity(0.3),
                           borderRadius: BorderRadius.all(Radius.circular(20.0)),
                         ),
-                        child: InternationalPhoneNumberInput(
-                          textStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w500,
-                          ),
-                          autoValidate: false,
-                          selectorTextStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w500,
-                          ),
-                          initialValue: number,
-                          textFieldController: controller,
-                          inputBorder: InputBorder.none,
-                          inputDecoration: InputDecoration(
-                            contentPadding: EdgeInsets.only(left: 20.0),
-                            hintText: 'Password',
-                            hintStyle: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.w500,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 28.0),
+                          child: TextField(
+                            obscureText: true,
+                            decoration: InputDecoration(
+                              labelText: 'Password',
+                              labelStyle:  TextStyle(
+                                color: white,
+                              ),
                             ),
-                            border: InputBorder.none,
                           ),
-                          selectorType: PhoneInputSelectorType.DIALOG,
                         ),
                       ),
                     ),
-
+                    SizedBox(height: 25.0),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20.0),
                       child: InkWell(
@@ -184,31 +155,29 @@ class _LoginState extends State<Login> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30.0),
                             gradient: LinearGradient(
-                              begin: Alignment.centerLeft,
-                              end: Alignment.bottomRight,
-                              stops: [0.1, 0.5, 0.9],
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              stops: [0.1, 0.9],
                               colors: [
-                                Colors.red[300].withOpacity(0.8),
-                                Colors.red[500].withOpacity(0.8),
-                                Colors.red[800].withOpacity(0.8),
+                                Color(0xFFFC2D55).withOpacity(0.8),
+                                Color(0xFF712E3E).withOpacity(0.8),
                               ],
                             ),
                           ),
                           child: Text(
-                            'Continue',
+                            'Login',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 16.0,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         ),
                       ),
                     ),
-
                     SizedBox(height: 10.0),
                     Text(
-                      'We\'ll send OTP for Verification',
+                      'Forgot your password?',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white,
