@@ -32,7 +32,7 @@ class _LoginState extends State<Login> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/bg.jpg'), fit: BoxFit.cover),
+            image: AssetImage('assets/loginbg.jpg'), fit: BoxFit.cover),
       ),
       child: Stack(
         children: <Widget>[
@@ -178,74 +178,74 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     SizedBox(height: 30.0),
-                    InkWell(
-                      onTap: () {},
-                      child: Padding(
-                        padding: EdgeInsets.all(20.0),
-                        child: Container(
-                          padding: EdgeInsets.all(15.0),
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30.0),
-                            color: Color(0xFF3B5998),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Image.asset(
-                                'assets/facebook.png',
-                                height: 25.0,
-                                fit: BoxFit.fitHeight,
-                              ),
-                              SizedBox(width: 10.0),
-                              Text(
-                                'Log in with Facebook',
-                                style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Padding(
-                        padding: EdgeInsets.all(20.0),
-                        child: Container(
-                          padding: EdgeInsets.all(15.0),
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30.0),
-                            color: Colors.white,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Image.asset(
-                                'assets/google.png',
-                                height: 25.0,
-                                fit: BoxFit.fitHeight,
-                              ),
-                              SizedBox(width: 10.0),
-                              Text(
-                                'Log in with Google',
-                                style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
+                    // InkWell(
+                    //   onTap: () {},
+                    //   child: Padding(
+                    //     padding: EdgeInsets.all(20.0),
+                    //     child: Container(
+                    //       padding: EdgeInsets.all(15.0),
+                    //       alignment: Alignment.center,
+                    //       decoration: BoxDecoration(
+                    //         borderRadius: BorderRadius.circular(30.0),
+                    //         color: Color(0xFF3B5998),
+                    //       ),
+                    //       child: Row(
+                    //         mainAxisAlignment: MainAxisAlignment.center,
+                    //         crossAxisAlignment: CrossAxisAlignment.center,
+                    //         children: <Widget>[
+                    //           Image.asset(
+                    //             'assets/facebook.png',
+                    //             height: 25.0,
+                    //             fit: BoxFit.fitHeight,
+                    //           ),
+                    //           SizedBox(width: 10.0),
+                    //           Text(
+                    //             'Log in with Facebook',
+                    //             style: TextStyle(
+                    //               fontSize: 16.0,
+                    //               color: Colors.white,
+                    //               fontWeight: FontWeight.w500,
+                    //             ),
+                    //           ),
+                    //         ],
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                    // InkWell(
+                    //   onTap: () {},
+                    //   child: Padding(
+                    //     padding: EdgeInsets.all(20.0),
+                    //     child: Container(
+                    //       padding: EdgeInsets.all(15.0),
+                    //       alignment: Alignment.center,
+                    //       decoration: BoxDecoration(
+                    //         borderRadius: BorderRadius.circular(30.0),
+                    //         color: Colors.white,
+                    //       ),
+                    //       child: Row(
+                    //         mainAxisAlignment: MainAxisAlignment.center,
+                    //         crossAxisAlignment: CrossAxisAlignment.center,
+                    //         children: <Widget>[
+                    //           Image.asset(
+                    //             'assets/google.png',
+                    //             height: 25.0,
+                    //             fit: BoxFit.fitHeight,
+                    //           ),
+                    //           SizedBox(width: 10.0),
+                    //           Text(
+                    //             'Log in with Google',
+                    //             style: TextStyle(
+                    //               fontSize: 16.0,
+                    //               color: Colors.black,
+                    //               fontWeight: FontWeight.w500,
+                    //             ),
+                    //           ),
+                    //         ],
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),

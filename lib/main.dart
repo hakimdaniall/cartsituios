@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.black,
         indicatorColor: Colors.white,
         tabBarTheme: TabBarTheme(),
+        fontFamily: 'Montserrat',
       ),
       builder: (context, child) {
         return ScrollConfiguration(
