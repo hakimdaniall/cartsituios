@@ -71,7 +71,7 @@ class _OTPScreenState extends State<OTPScreen> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/bg.jpg'), fit: BoxFit.cover),
+            image: AssetImage('assets/otpbg.jpg'), fit: BoxFit.cover),
       ),
       child: Stack(
         children: <Widget>[
@@ -251,7 +251,61 @@ class _OTPScreenState extends State<OTPScreen> {
                             },
                           ),
                         ),
-                        // 4 End
+                        //5 start
+                        Container(
+                          width: 50.0,
+                          height: 50.0,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[200].withOpacity(0.3),
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: TextField(
+                            focusNode: fourthFocusNode,
+                            controller: fourthController,
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.all(18.0),
+                              border: InputBorder.none,
+                            ),
+                            onChanged: (v) {
+                              loadingDialog();
+                            },
+                          ),
+                        ),
+                        //6 start
+                        Container(
+                          width: 50.0,
+                          height: 50.0,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[200].withOpacity(0.3),
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: TextField(
+                            focusNode: fourthFocusNode,
+                            controller: fourthController,
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.all(18.0),
+                              border: InputBorder.none,
+                            ),
+                            onChanged: (v) {
+                              loadingDialog();
+                            },
+                          ),
+                        ),
+// 4 End
                       ],
                     ),
                   ),
@@ -304,13 +358,12 @@ class _OTPScreenState extends State<OTPScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30.0),
                           gradient: LinearGradient(
-                            begin: Alignment.centerLeft,
-                            end: Alignment.bottomRight,
-                            stops: [0.1, 0.5, 0.9],
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            stops: [0.1, 0.9],
                             colors: [
-                              Colors.red[300].withOpacity(0.8),
-                              Colors.red[500].withOpacity(0.8),
-                              Colors.red[800].withOpacity(0.8),
+                              Color(0xFFFC2D55).withOpacity(0.8),
+                              Color(0xFF712E3E).withOpacity(0.8),
                             ],
                           ),
                         ),

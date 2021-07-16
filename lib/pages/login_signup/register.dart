@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:tiktok_ui/pages/login_signup/otp.dart';
 
@@ -10,7 +11,7 @@ class Register extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/bg.jpg'), fit: BoxFit.cover),
+            image: AssetImage('assets/registerbg.jpg'), fit: BoxFit.cover),
       ),
       child: Stack(
         children: <Widget>[
@@ -70,6 +71,45 @@ class Register extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 50.0),
+                  Padding(
+                    padding: const EdgeInsets.only(right:20.0, left: 20.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200].withOpacity(0.3),
+                        borderRadius: BorderRadius.all(Radius.circular(20.0),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(right:20.0, left: 20.0),
+                        child: InternationalPhoneNumberInput(
+                          textStyle: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          errorMessage: 'Invalid Phone Number',
+                          autoValidate: false,
+                          selectorTextStyle: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          inputBorder: InputBorder.none,
+                          inputDecoration: InputDecoration(
+                            border: InputBorder.none,
+                            contentPadding: EdgeInsets.only(left: 20.0),
+                            hintText: 'Phone Number',
+                            hintStyle: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w500
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
                   Padding(
                     padding: EdgeInsets.only(right: 20.0, left: 20.0),
                     child: Container(
@@ -198,13 +238,12 @@ class Register extends StatelessWidget {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30.0),
                           gradient: LinearGradient(
-                            begin: Alignment.centerLeft,
-                            end: Alignment.bottomRight,
-                            stops: [0.1, 0.5, 0.9],
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            stops: [0.1, 0.9],
                             colors: [
-                              Colors.red[300].withOpacity(0.8),
-                              Colors.red[500].withOpacity(0.8),
-                              Colors.red[800].withOpacity(0.8),
+                              Color(0xFFFC2D55).withOpacity(0.8),
+                              Color(0xFF712E3E).withOpacity(0.8),
                             ],
                           ),
                         ),
