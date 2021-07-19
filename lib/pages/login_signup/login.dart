@@ -63,10 +63,22 @@ class _LoginState extends State<Login> {
             child: WillPopScope(
               child: Scaffold(
                 backgroundColor: Colors.transparent,
+                appBar: AppBar(
+                  backgroundColor: Colors.transparent,
+                  elevation: 0.0,
+                  leading: InkWell(
+                    onTap: () {Navigator.pop(context);
+                    },
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: white,
+                    ),
+                  ),
+                ),
                 body: ListView(
                   physics: BouncingScrollPhysics(),
                   children: <Widget>[
-                    SizedBox(height: 450.0),
+                    SizedBox(height: 400.0),
                     Padding(
                       padding: EdgeInsets.only(top: 20.0, left: 30.0),
                       child: Text(
