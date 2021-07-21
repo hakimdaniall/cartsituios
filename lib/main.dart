@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:tiktok_ui/appBehaviour/my_behaviour.dart';
 import 'package:tiktok_ui/pages/splashScreen.dart';
 
+import 'pages/home.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: Home(),
       theme: ThemeData(
         textSelectionTheme: TextSelectionThemeData(
           cursorColor: Colors.white,

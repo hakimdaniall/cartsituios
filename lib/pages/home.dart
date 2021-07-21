@@ -10,6 +10,8 @@ import 'package:video_player/video_player.dart';
 import 'dart:math' as math;
 import 'package:tiktok_ui/pages/profile/profile.dart';
 
+import '../theme/colors.dart';
+
 class Home extends StatefulWidget {
   @override
   _Home createState() => _Home();
@@ -521,7 +523,7 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
             color: Colors.white.withOpacity(0.6),
           ),
           Container(
-            color: (home) ? Colors.transparent : Colors.black,
+            color: Colors.black,
             height: 60.0,
             child: Padding(
                 padding: EdgeInsets.only(top: 7, bottom: 7),
@@ -658,46 +660,18 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => RecordVideo()));
       },
-      child: Container(
-        width: 46,
-        height: 30,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-            color: Colors.transparent),
-        child: Stack(
-          children: <Widget>[
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Container(
-                width: 28,
-                height: 30,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    color: Color(0x2dd3e7).withOpacity(1)),
-              ),
-            ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Container(
-                width: 28,
-                height: 30,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    color: Color(0xed316a).withOpacity(1)),
-              ),
-            ),
-            Center(
-              child: Container(
-                width: 28,
-                height: 30,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    color: Colors.white),
-                child: Center(child: Icon(Icons.add, color: Colors.black)),
-              ),
-            )
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.star, color: white, size: 30),
+          Text('Wishlist',
+              style: TextStyle(
+                  color: (notifications)
+                      ? Colors.white
+                      : Colors.white.withOpacity(0.8),
+                  fontSize: 10),
+          ),
+        ],
       ),
     );
   }
