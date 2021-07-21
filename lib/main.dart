@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tiktok_ui/appBehaviour/my_behaviour.dart';
+import 'package:tiktok_ui/pages/cart/cart_screen.dart';
 import 'package:tiktok_ui/pages/splashScreen.dart';
 
 import 'pages/home.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: CartScreen(),
       theme: ThemeData(
         textSelectionTheme: TextSelectionThemeData(
           cursorColor: Colors.white,
