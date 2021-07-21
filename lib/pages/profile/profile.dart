@@ -233,22 +233,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              width: 20.0,
-                            ),
-                            InkWell(
-                              onTap: () async {
-                                const url =
-                                    'https://www.instagram.com/umang.donda.7/';
-                                if (await canLaunch(url)) {
-                                  await launch(url);
-                                } else {
-                                  throw 'Could not launch $url';
-                                }
-                              },
-                              child: Image.asset('assets/insta.png',
-                                  height: 30.0, fit: BoxFit.fitHeight),
-                            ),
                           ],
                         ),
                         SizedBox(height: 20.0),

@@ -7,24 +7,139 @@ class EditProfile extends StatefulWidget {
 }
 
 class _EditProfileState extends State<EditProfile> {
+  String name = 'Hafizul Hafiz';
   String number = '9603456878';
   String email = 'test@abc.com';
-  String instagramUrl = '';
+  String userAddressLine1 = '';
+  String userAddressLine2 = '';
+  String userAddressCity = '';
+  String userAddressPostcode = '';
+  String userAddressState = '';
+  var nameController = TextEditingController();
   var phoneController = TextEditingController();
   var emailController = TextEditingController();
-  var instagramUrlController = TextEditingController();
+  var userAddressLine1Controller = TextEditingController();
+  var userAddressLine2Controller = TextEditingController();
+  var userAddressCityController = TextEditingController();
+  var userAddressPostcodeController = TextEditingController();
+  var userAddressStateController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
+    nameController.text = name;
     phoneController.text = number;
     emailController.text = email;
-    instagramUrlController.text = instagramUrl;
+    userAddressLine1Controller.text = userAddressLine1;
+    userAddressLine2Controller.text = userAddressLine2;
+    userAddressCityController.text = userAddressCity;
+    userAddressPostcodeController.text = userAddressPostcode;
+    userAddressStateController.text = userAddressState;
   }
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+
+    changeName() {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          // return object of type Dialog
+          return Dialog(
+            elevation: 0.0,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)),
+            child: Container(
+              height: 210.0,
+              padding: EdgeInsets.all(20.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "Change Name",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  TextField(
+                    controller: nameController,
+                    cursorColor: Colors.black,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: 'Enter Your Name',
+                      hintStyle: TextStyle(
+                        color: Colors.grey[400],
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      InkWell(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Container(
+                          width: (width / 3.5),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                            color: Colors.grey[300],
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: Text(
+                            'Cancel',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            number = nameController.text;
+                            Navigator.pop(context);
+                          });
+                        },
+                        child: Container(
+                          width: (width / 3.5),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: Text(
+                            'Okay',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      );
+    }
 
     changePhoneNumber() {
       showDialog(
@@ -354,7 +469,7 @@ class _EditProfileState extends State<EditProfile> {
       );
     }
 
-    changeInstagramUrl() {
+    changeUserAddress() {
       showDialog(
         context: context,
         barrierDismissible: false,
@@ -365,14 +480,14 @@ class _EditProfileState extends State<EditProfile> {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0)),
             child: Container(
-              height: 200.0,
+              height: 500.0,
               padding: EdgeInsets.all(20.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    "Instagram Url",
+                    "Address",
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.w600,
@@ -380,7 +495,7 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                   SizedBox(height: 10.0),
                   TextField(
-                    controller: instagramUrlController,
+                    controller: userAddressLine1Controller,
                     cursorColor: Colors.black,
                     keyboardType: TextInputType.text,
                     style: TextStyle(
@@ -388,7 +503,79 @@ class _EditProfileState extends State<EditProfile> {
                       fontWeight: FontWeight.w500,
                     ),
                     decoration: InputDecoration(
-                      hintText: 'Enter Instagram Url',
+                      hintText: 'Enter Address Line 1',
+                      hintStyle: TextStyle(
+                        color: Colors.grey[400],
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
+                  TextField(
+                    controller: userAddressLine2Controller,
+                    cursorColor: Colors.black,
+                    keyboardType: TextInputType.text,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    decoration: InputDecoration(
+                      hintText: 'Enter Address Line 2',
+                      hintStyle: TextStyle(
+                        color: Colors.grey[400],
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
+                  TextField(
+                    controller: userAddressCityController,
+                    cursorColor: Colors.black,
+                    keyboardType: TextInputType.text,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    decoration: InputDecoration(
+                      hintText: 'Enter City',
+                      hintStyle: TextStyle(
+                        color: Colors.grey[400],
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
+                  TextField(
+                    controller: userAddressPostcodeController,
+                    cursorColor: Colors.black,
+                    keyboardType: TextInputType.text,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    decoration: InputDecoration(
+                      hintText: 'Enter Postcode',
+                      hintStyle: TextStyle(
+                        color: Colors.grey[400],
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
+                  TextField(
+                    controller: userAddressStateController,
+                    cursorColor: Colors.black,
+                    keyboardType: TextInputType.text,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    decoration: InputDecoration(
+                      hintText: 'Enter State',
                       hintStyle: TextStyle(
                         color: Colors.grey[400],
                         fontSize: 16.0,
@@ -423,7 +610,7 @@ class _EditProfileState extends State<EditProfile> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            instagramUrl = instagramUrlController.text;
+                            userAddressLine1 = userAddressLine1Controller.text;
                             Navigator.pop(context);
                           });
                         },
@@ -470,7 +657,7 @@ class _EditProfileState extends State<EditProfile> {
                 onPressed: () {},
               ),
               CupertinoActionSheetAction(
-                child: Text('Choose form Gallery'),
+                child: Text('Choose from Gallery'),
                 onPressed: () {},
               )
             ],
@@ -547,6 +734,48 @@ class _EditProfileState extends State<EditProfile> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
+                    SizedBox(height: 10.0),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              'Name',
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 5.0),
+                            Text(
+                              'Hafizul Hafiz',
+                              style: TextStyle(
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ],
+                        ),
+                        IconButton(
+                          onPressed: () {
+                            changeName();
+                          },
+                          icon: Icon(
+                            Icons.edit,
+                            color: Colors.grey[400],
+                            size: 25.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Divider(
+                      color: Colors.grey,
+                    ),
                     SizedBox(height: 10.0),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -682,7 +911,7 @@ class _EditProfileState extends State<EditProfile> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                              'Instagram Url',
+                              'Address',
                               style: TextStyle(
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.w500,
@@ -691,7 +920,7 @@ class _EditProfileState extends State<EditProfile> {
                             ),
                             SizedBox(height: 5.0),
                             Text(
-                              '$instagramUrl',
+                              '$userAddressLine1',
                               style: TextStyle(
                                 fontSize: 14.0,
                                 fontWeight: FontWeight.w500,
@@ -702,7 +931,7 @@ class _EditProfileState extends State<EditProfile> {
                         ),
                         IconButton(
                           onPressed: () {
-                            changeInstagramUrl();
+                            changeUserAddress();
                           },
                           icon: Icon(
                             Icons.edit,
