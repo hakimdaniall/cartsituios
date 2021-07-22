@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tiktok_ui/pages/models/Cart.dart';
 import 'package:tiktok_ui/theme/colors.dart';
 import 'package:tiktok_ui/pages/cart/components/body.dart';
 import 'package:tiktok_ui/pages/cart/components/checkout_card.dart';
@@ -34,7 +35,7 @@ class CartScreen extends StatelessWidget {
             style: TextStyle(color: Colors.white),
             ),
             Text(
-              '4 Items',
+              '${demoCarts.length} items',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 12.0,

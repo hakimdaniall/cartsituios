@@ -56,7 +56,7 @@ class CheckoutCard extends StatelessWidget {
             //     ),
             //   ],
             // ),
-            //In Case We Are Going To Use Voucher Section
+            // In Case We Are Going To Use Voucher Section
             SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -85,11 +85,12 @@ class CheckoutCard extends StatelessWidget {
                     child: Text('Checkout',
                       style: TextStyle(
                           fontSize: 20
-                      ),),
+                      ),
+                    ),
                   ),
-                )
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),

@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:tiktok_ui/theme/colors.dart';
+import 'package:tiktok_ui/pages/models/Cart.dart';
 
 class CartItemCard extends StatelessWidget {
   const CartItemCard({
     Key key,
+    @required this.cart,
   }) : super(key: key);
 
+  final Cart cart;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SizedBox(width: 20.0, height: 50.0),
-        SizedBox(width: 80,
+        SizedBox(width: 60,
           child: AspectRatio(
             aspectRatio: 0.88,
             child: Container(
@@ -21,7 +23,7 @@ class CartItemCard extends StatelessWidget {
                 color: Color(0xFFF5F6F9),
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Image.asset('assets/dance/dance_1.jpg'),
+              child: Image.asset(cart.product.images[0]),
             ),
           ),
         ),
@@ -29,7 +31,7 @@ class CartItemCard extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Wireless Controller',
+            Text(cart.product.title,
               style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.bold,
@@ -39,14 +41,14 @@ class CartItemCard extends StatelessWidget {
             ),
             Text.rich(
               TextSpan(
-                  text: 'RM 120',
+                  text: 'RM ${cart.product.price}',
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     color: Colors.redAccent,
                   ),
                   children: [
                     TextSpan(
-                      text: ' x2',
+                      text: ' x${cart.numOfItem}',
                       style: TextStyle(
                         color: Colors.grey,
                       ),

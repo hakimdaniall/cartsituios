@@ -31,6 +31,7 @@ dependencies:
   intl_phone_number_input: ^0.4.6+2
   flutter_spinkit: ^4.1.2
   url_launcher: ^5.5.0
+  flutter_svg: ^0.19.3
 
 dev_dependencies:
   flutter_test:
@@ -56,6 +57,8 @@ flutter:
     - assets/laugh/
     - assets/food/
     - assets/user_profile/
+    - assets/images/
+    - assets/icons/
 
   # example:
   fonts:
