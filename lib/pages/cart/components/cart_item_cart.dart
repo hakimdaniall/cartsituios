@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tiktok_ui/theme/colors.dart';
-import 'package:tiktok_ui/pages/models/Cart.dart';
+import 'package:tiktok_ui/models/Cart.dart';
 
 class CartItemCard extends StatelessWidget {
   const CartItemCard({

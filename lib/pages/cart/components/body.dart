@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tiktok_ui/theme/colors.dart';
 import 'cart_item_cart.dart';
 
-import 'package:tiktok_ui/pages/models/Cart.dart';
+import 'package:tiktok_ui/models/Cart.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Body extends StatefulWidget {

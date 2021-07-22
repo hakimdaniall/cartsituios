@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tiktok_ui/pages/models/Cart.dart';
+import 'package:tiktok_ui/models/Cart.dart';
 import 'package:tiktok_ui/theme/colors.dart';
 import 'package:tiktok_ui/pages/cart/components/body.dart';
 import 'package:tiktok_ui/pages/cart/components/checkout_card.dart';
