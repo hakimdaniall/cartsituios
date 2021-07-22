@@ -73,34 +73,40 @@ class ProductDescription extends StatelessWidget {
                   color: Colors.redAccent,
                 ),
                 SizedBox(width: 10),
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      border: Border.all(color: grey)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'VIDEO CALL',
-                      style: TextStyle(
-                          color: grey,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 12),
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        border: Border.all(color: grey)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'VIDEO CALL',
+                        style: TextStyle(
+                            color: grey,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 12),
+                      ),
                     ),
                   ),
                 ),
                 SizedBox(width: 5),
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      border: Border.all(color: grey)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'CHAT',
-                      style: TextStyle(
-                          color: grey,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14),
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        border: Border.all(color: grey)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'CHAT',
+                        style: TextStyle(
+                            color: grey,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14),
+                      ),
                     ),
                   ),
                 )
