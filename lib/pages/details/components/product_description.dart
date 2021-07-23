@@ -63,14 +63,13 @@ class ProductDescription extends StatelessWidget {
               children: [
                 Text(
                   'Product Preview',
-                  style: TextStyle(
-                      color: Colors.redAccent, fontWeight: FontWeight.w600),
+                  style: TextStyle(color: red, fontWeight: FontWeight.w600),
                 ),
                 SizedBox(width: 5),
                 Icon(
                   Icons.arrow_forward_ios,
                   size: 12,
-                  color: Colors.redAccent,
+                  color: red,
                 ),
                 SizedBox(width: 10),
                 GestureDetector(

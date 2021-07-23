@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tiktok_ui/pages/cart/cart_screen.dart';
 import 'package:tiktok_ui/pages/creator_profile/creator_profile.dart';
 import 'package:tiktok_ui/pages/notifications_messages/notifications.dart';
 import 'package:tiktok_ui/pages/record_video/record_video.dart';
@@ -141,7 +143,7 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
             });
           },
           scrollDirection: Axis.vertical,
-          itemCount: 5,
+          itemCount: 6,
           itemBuilder: (context, index) {
             return Stack(
               children: <Widget>[
@@ -223,7 +225,7 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
                       alignment: Alignment.bottomRight,
                       child: Container(
                         width: 70,
-                        height: 400,
+                        height: 600,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: <Widget>[
@@ -263,6 +265,28 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
                                               size: 15, color: Colors.white)),
                                     ),
                                   )
+                                ],
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(bottom: 25),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  CartScreen()));
+                                    },
+                                    child: SvgPicture.asset(
+                                      'assets/icons/Cart Icon.svg',
+                                      color: grey,
+                                      height: 25,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -523,7 +547,7 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
             color: Colors.white.withOpacity(0.6),
           ),
           Container(
-            color: Colors.black,
+            color: appBgColor,
             height: 60.0,
             child: Padding(
                 padding: EdgeInsets.only(top: 7, bottom: 7),
@@ -547,13 +571,10 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Icon(Icons.home,
-                                color: (home)
-                                    ? Colors.white
-                                    : Colors.white.withOpacity(0.8),
+                                color: (home) ? grey : grey.withOpacity(0.8),
                                 size: 30),
                             Text('Home',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 10))
+                                style: TextStyle(color: grey, fontSize: 10))
                           ],
                         ),
                       ),
@@ -572,15 +593,12 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Icon(Icons.search,
-                              color: (search)
-                                  ? Colors.white
-                                  : Colors.white.withOpacity(0.8),
+                              color: (search) ? grey : grey.withOpacity(0.8),
                               size: 30),
                           Text('Discover',
                               style: TextStyle(
-                                  color: (search)
-                                      ? Colors.white
-                                      : Colors.white.withOpacity(0.8),
+                                  color:
+                                      (search) ? grey : grey.withOpacity(0.8),
                                   fontSize: 10))
                         ],
                       ),
@@ -601,14 +619,14 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
                         children: <Widget>[
                           Icon(Icons.notifications_none,
                               color: (notifications)
-                                  ? Colors.white
-                                  : Colors.white.withOpacity(0.8),
+                                  ? grey
+                                  : grey.withOpacity(0.8),
                               size: 30),
                           Text('Notifications',
                               style: TextStyle(
                                   color: (notifications)
-                                      ? Colors.white
-                                      : Colors.white.withOpacity(0.8),
+                                      ? grey
+                                      : grey.withOpacity(0.8),
                                   fontSize: 10))
                         ],
                       ),
@@ -629,15 +647,11 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Icon(Icons.person,
-                                color: (me)
-                                    ? Colors.white
-                                    : Colors.white.withOpacity(0.8),
+                                color: (me) ? grey : grey.withOpacity(0.8),
                                 size: 30),
                             Text('Me',
                                 style: TextStyle(
-                                    color: (me)
-                                        ? Colors.white
-                                        : Colors.white.withOpacity(0.8),
+                                    color: (me) ? grey : grey.withOpacity(0.8),
                                     fontSize: 10))
                           ],
                         ),
@@ -664,12 +678,13 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(Icons.star, color: white, size: 30),
-          Text('Wishlist',
-              style: TextStyle(
-                  color: (notifications)
-                      ? Colors.white
-                      : Colors.white.withOpacity(0.8),
-                  fontSize: 10),
+          Text(
+            'Wishlist',
+            style: TextStyle(
+                color: (notifications)
+                    ? Colors.white
+                    : Colors.white.withOpacity(0.8),
+                fontSize: 10),
           ),
         ],
       ),

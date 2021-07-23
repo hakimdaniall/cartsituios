@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tiktok_ui/pages/checkout/checkout_screen.dart';
 import 'package:tiktok_ui/theme/colors.dart';
 
-class CheckoutCard extends StatelessWidget {
-  const CheckoutCard({
+class PaymentCard extends StatelessWidget {
+  const PaymentCard({
     Key key,
   }) : super(key: key);
 
@@ -64,7 +63,7 @@ class CheckoutCard extends StatelessWidget {
                     style: TextStyle(fontSize: 16, color: black),
                     children: [
                       TextSpan(
-                        text: ' RM 224.76',
+                        text: ' RM 100',
                         style: TextStyle(
                             fontSize: 16,
                             color: black,
@@ -77,18 +76,10 @@ class CheckoutCard extends StatelessWidget {
                   width: 150,
                   height: 50,
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: red,
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => CheckOutScreen()),
-                      );
-                    },
+                    style: ElevatedButton.styleFrom(primary: red),
+                    onPressed: () {},
                     child: Text(
-                      'Checkout',
+                      'Payment',
                       style: TextStyle(fontSize: 20),
                     ),
                   ),

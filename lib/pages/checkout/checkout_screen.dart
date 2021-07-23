@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:tiktok_ui/models/Cart.dart';
+import 'package:tiktok_ui/pages/checkout/components/payment_card.dart';
+import 'package:tiktok_ui/pages/checkout/components/body.dart';
 import 'package:tiktok_ui/theme/colors.dart';
-import 'package:tiktok_ui/pages/cart/components/body.dart';
-import 'package:tiktok_ui/pages/cart/components/checkout_card.dart';
 
-class CartScreen extends StatelessWidget {
+class CheckOutScreen extends StatelessWidget {
+  const CheckOutScreen({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: appBgColor,
       appBar: buildAppBar(context),
       body: Body(),
-      bottomNavigationBar: CheckoutCard(),
+      bottomNavigationBar: PaymentCard(),
     );
   }
 
@@ -32,16 +34,9 @@ class CartScreen extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              'Your Cart',
+              'Set Couriers',
               style: TextStyle(color: Colors.white),
             ),
-            Text(
-              '${demoCarts.length} items',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 12.0,
-              ),
-            )
           ],
         ),
       ),

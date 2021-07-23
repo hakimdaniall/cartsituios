@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tiktok_ui/models/Product.dart';
+import 'package:tiktok_ui/pages/cart/cart_screen.dart';
 import 'package:tiktok_ui/pages/details/components/product_description.dart';
 import 'package:tiktok_ui/pages/details/components/top_rounded.container.dart';
 import 'package:tiktok_ui/theme/colors.dart';
@@ -30,7 +31,12 @@ class Body extends StatelessWidget {
                   left: 20, right: 20, top: 50, bottom: 50),
               child: ElevatedButton(
                 style: ButtonStyle(),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CartScreen()),
+                  );
+                },
                 child: Text(
                   'Add To Cart',
                   style: TextStyle(fontSize: 20),

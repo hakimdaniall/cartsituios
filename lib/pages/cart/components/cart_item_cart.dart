@@ -14,7 +14,8 @@ class CartItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SizedBox(width: 60,
+        SizedBox(
+          width: 60,
           child: AspectRatio(
             aspectRatio: 0.88,
             child: Container(
@@ -31,29 +32,30 @@ class CartItemCard extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(cart.product.title,
+            Text(
+              cart.product.title,
               style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-              color: white,
-            ),
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+                color: white,
+              ),
               maxLines: 2,
             ),
             Text.rich(
               TextSpan(
-                  text: 'RM ${cart.product.price}',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    color: Colors.redAccent,
-                  ),
-                  children: [
-                    TextSpan(
-                      text: ' x${cart.numOfItem}',
-                      style: TextStyle(
-                        color: Colors.grey,
-                      ),
+                text: 'RM ${cart.product.price}',
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  color: red,
+                ),
+                children: [
+                  TextSpan(
+                    text: ' x${cart.numOfItem}',
+                    style: TextStyle(
+                      color: Colors.grey,
                     ),
-                  ],
+                  ),
+                ],
               ),
             ),
           ],
