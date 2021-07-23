@@ -3,9 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:tiktok_ui/appBehaviour/my_behaviour.dart';
 import 'package:tiktok_ui/pages/cart/cart_screen.dart';
 import 'package:tiktok_ui/pages/checkout/checkout_screen.dart';
+import 'package:tiktok_ui/pages/creator_profile/creator_profile.dart';
 import 'package:tiktok_ui/pages/details/details_screen.dart';
 import 'package:tiktok_ui/pages/profile/profile.dart';
 import 'package:tiktok_ui/pages/splashScreen.dart';
+import 'package:tiktok_ui/pages/store/store_screen.dart';
 
 import 'pages/home.dart';
 
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CartScreen(),
+      home: StoreScreen(),
       theme: ThemeData(
         textSelectionTheme: TextSelectionThemeData(
           cursorColor: Colors.white,

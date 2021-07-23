@@ -38,13 +38,10 @@ class ItemSection extends StatelessWidget {
             ),
           ),
         ),
-        Divider(
-          color: grey,
-        ),
         Row(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 8.0),
+              padding: const EdgeInsets.only(left: 8.0, top: 8.0),
               child: SizedBox(
                 width: 60,
                 child: AspectRatio(
