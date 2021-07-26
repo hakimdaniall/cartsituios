@@ -8,6 +8,7 @@ import 'package:tiktok_ui/pages/details/details_screen.dart';
 import 'package:tiktok_ui/pages/profile/profile.dart';
 import 'package:tiktok_ui/pages/review/review_screen.dart';
 import 'package:tiktok_ui/pages/splashScreen.dart';
+import 'package:tiktok_ui/pages/store/edit_score.dart';
 import 'package:tiktok_ui/pages/store/store_screen.dart';
 
 import 'pages/home.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ReviewScreen(),
+      home: EditStore(),
       theme: ThemeData(
         textSelectionTheme: TextSelectionThemeData(
           cursorColor: Colors.white,
