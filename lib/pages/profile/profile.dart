@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:tiktok_ui/pages/login_signup/login.dart';
 import 'package:tiktok_ui/pages/profile/edit_profile.dart';
+import 'package:tiktok_ui/pages/profile/myreview.dart';
 import 'package:tiktok_ui/pages/profile/profile_setting.dart';
 import 'package:tiktok_ui/pages/profile/profile_tab_item.dart';
+import 'package:tiktok_ui/pages/profile/purchases.dart';
 import 'package:tiktok_ui/pages/profile/term_of_use.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -108,7 +110,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     double width = MediaQuery.of(context).size.width;
 
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         backgroundColor: Colors.black,
         body: NestedScrollView(
@@ -315,13 +317,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 bottom: TabBar(
                   tabs: [
                     Tab(
-                      child: Icon(Icons.dashboard, color: Colors.white),
+                      child: Icon(Icons.perm_identity_outlined,
+                          color: Colors.white),
                     ),
                     Tab(
-                      child: Icon(Icons.favorite_border, color: Colors.white),
+                      child: Icon(Icons.message_outlined, color: Colors.white),
                     ),
                     Tab(
-                      child: Icon(Icons.bookmark_border, color: Colors.white),
+                      child: Icon(Icons.shopping_cart_outlined,
+                          color: Colors.white),
+                    ),
+                    Tab(
+                      child:
+                          Icon(Icons.star_border_outlined, color: Colors.white),
                     ),
                   ],
                 ),
@@ -340,7 +348,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: 60.7),
-                child: ProfileTabItem(),
+                child: Purchases(),
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: 60.7),
+                child: MyReview(),
               ),
             ],
           ),
