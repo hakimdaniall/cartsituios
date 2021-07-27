@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:tiktok_ui/theme/colors.dart';
 
 class EditProfile extends StatefulWidget {
   @override
@@ -674,6 +675,13 @@ class _EditProfileState extends State<EditProfile> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: grey,
+          ),
+          onPressed: () {},
+        ),
         backgroundColor: Colors.black,
         centerTitle: true,
         title: Text(

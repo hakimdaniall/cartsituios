@@ -15,6 +15,13 @@ class _WishlistScreenState extends State<WishlistScreen> {
     return Scaffold(
       backgroundColor: appBgColor,
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: grey,
+          ),
+          onPressed: () {},
+        ),
         backgroundColor: appBgColor,
         title: Text(
           'Wish List',

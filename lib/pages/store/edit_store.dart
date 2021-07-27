@@ -27,7 +27,7 @@ class _EditStoreState extends State<EditStore> {
         title: Text(
           "Edit Store",
           style:
-              TextStyle(fontSize: 25, fontWeight: FontWeight.w500, color: grey),
+              TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: grey),
         ),
         // actions: [
         //   IconButton(
@@ -111,39 +111,44 @@ class _EditStoreState extends State<EditStore> {
               SizedBox(
                 height: 10,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  RaisedButton(
-                    onPressed: () {},
-                    color: grey,
-                    padding: EdgeInsets.symmetric(horizontal: 50),
-                    elevation: 2,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Text(
-                      "CANCEL",
-                      style: TextStyle(
-                          fontSize: 14, letterSpacing: 2.2, color: appBgColor),
-                    ),
-                  ),
-                  RaisedButton(
-                    onPressed: () {},
-                    color: red,
-                    padding: EdgeInsets.symmetric(horizontal: 50),
-                    elevation: 2,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Text(
-                      "SAVE",
-                      style: TextStyle(
-                        fontSize: 14,
-                        letterSpacing: 2.2,
-                        color: grey,
+              Padding(
+                padding: const EdgeInsets.only(bottom: 15.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    RaisedButton(
+                      onPressed: () {},
+                      color: grey,
+                      padding: EdgeInsets.symmetric(horizontal: 50),
+                      elevation: 2,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Text(
+                        "CANCEL",
+                        style: TextStyle(
+                            fontSize: 14,
+                            letterSpacing: 2.2,
+                            color: appBgColor),
                       ),
                     ),
-                  ),
-                ],
+                    RaisedButton(
+                      onPressed: () {},
+                      color: red,
+                      padding: EdgeInsets.symmetric(horizontal: 50),
+                      elevation: 2,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Text(
+                        "SAVE",
+                        style: TextStyle(
+                          fontSize: 14,
+                          letterSpacing: 2.2,
+                          color: grey,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               )
             ],
           ),

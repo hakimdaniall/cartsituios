@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tiktok_ui/appBehaviour/my_behaviour.dart';
 import 'package:tiktok_ui/pages/home.dart';
+import 'package:tiktok_ui/pages/profile/edit_profile.dart';
+import 'package:tiktok_ui/pages/store/edit_store.dart';
 import 'package:tiktok_ui/pages/wishlist/wishlist_screen.dart';
 
 import 'pages/review/review_screen.dart';
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: EditProfile(),
       theme: ThemeData(
         textSelectionTheme: TextSelectionThemeData(
           cursorColor: Colors.white,
