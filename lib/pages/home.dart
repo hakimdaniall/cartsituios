@@ -8,6 +8,7 @@ import 'package:tiktok_ui/pages/creator_profile/creator_profile.dart';
 import 'package:tiktok_ui/pages/notifications_messages/notifications.dart';
 import 'package:tiktok_ui/pages/record_video/record_video.dart';
 import 'package:tiktok_ui/pages/search/search.dart';
+import 'package:tiktok_ui/pages/wishlist/wishlist_screen.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:math' as math;
 import 'package:tiktok_ui/pages/profile/profile.dart';
@@ -672,7 +673,7 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
       onTap: () {
         _controller.pause();
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => RecordVideo()));
+            context, MaterialPageRoute(builder: (context) => WishlistScreen()));
       },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

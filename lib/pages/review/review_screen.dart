@@ -43,21 +43,18 @@ class _ReviewScreenState extends State<ReviewScreen> {
             itemName: 'Playstation 4 Controller',
             rating: '5.0',
           ),
-          itemDivider(),
           ProductItem(
             itemImage: 'assets/images/Image Popular Product 2.png',
             storeOwner: 'Faisal Shadli',
             itemName: 'Wireless Headphone',
             rating: '4.6',
           ),
-          itemDivider(),
           ProductItem(
             itemImage: 'assets/images/glap.png',
             storeOwner: 'Faisal Shadli',
             itemName: 'Motorcycle Glove',
             rating: '4.2',
           ),
-          itemDivider(),
           ProductItem(
             itemImage: 'assets/food/food_1.png',
             storeOwner: 'Faisal Shadli',
