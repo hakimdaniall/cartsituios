@@ -20,7 +20,9 @@ class _WishlistScreenState extends State<WishlistScreen> {
             Icons.arrow_back_ios,
             color: grey,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
         backgroundColor: appBgColor,
         title: Text(
