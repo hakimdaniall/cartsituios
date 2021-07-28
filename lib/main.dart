@@ -9,6 +9,7 @@ import 'package:tiktok_ui/pages/store/edit_store.dart';
 import 'package:tiktok_ui/pages/wishlist/wishlist_screen.dart';
 
 import 'pages/review/review_screen.dart';
+import 'pages/splashScreen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FirstTimeScreen(),
+      home: SplashScreen(),
       theme: ThemeData(
         textSelectionTheme: TextSelectionThemeData(
           cursorColor: Colors.white,
