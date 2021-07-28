@@ -13,15 +13,18 @@ import 'package:url_launcher/url_launcher.dart';
 import '../login_signup/register.dart';
 import 'edit_profile.dart';
 
-class ProfileScreen extends StatefulWidget {
+class MyStoreProfileScreen extends StatefulWidget {
   @override
-  _ProfileScreenState createState() => _ProfileScreenState();
+  _MyStoreProfileScreenState createState() => _MyStoreProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _MyStoreProfileScreenState extends State<MyStoreProfileScreen> {
   static List<String> choices = <String>[
-    'Edit User Profile',
-    'Register My Store'
+    'Profile Setting',
+    'Share Profile',
+    'Term of Use',
+    'Rate App',
+    'Logout'
   ];
 
   logoutDialogue() {
@@ -111,7 +114,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     double width = MediaQuery.of(context).size.width;
 
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         backgroundColor: Colors.black,
         body: NestedScrollView(
@@ -135,9 +138,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           child: Row(
                             children: [
                               Icon(
-                                (choice == 'Edit User Profile')
+                                (choice == 'Profile Setting')
                                     ? Icons.perm_identity
-                                    : Icons.store_mall_directory_sharp,
+                                    : (choice == 'Share Profile')
+                                        ? Icons.share
+                                        : (choice == 'Term of Use')
+                                            ? Icons.vpn_key
+                                            : (choice == 'Rate App')
+                                                ? Icons.star
+                                                : Icons.exit_to_app,
                                 color: Colors.black,
                                 size: 18.0,
                               ),
@@ -205,9 +214,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   tabs: [
                     Tab(
                       child: Text(
+                        'My Store',
+                        style: TextStyle(
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    Tab(
+                      child: Text(
                         'Chats',
                         style: TextStyle(
-                          fontSize: 14.0,
+                          fontSize: 12.0,
                           fontWeight: FontWeight.w600,
                           color: Colors.white,
                         ),
@@ -217,7 +236,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       child: Text(
                         'Purchases',
                         style: TextStyle(
-                          fontSize: 14.0,
+                          fontSize: 12.0,
                           fontWeight: FontWeight.w600,
                           color: Colors.white,
                         ),
@@ -226,8 +245,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Tab(
                       child: Text(
                         'My Reviews',
+                        textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 14.0,
+                          fontSize: 12.0,
                           fontWeight: FontWeight.w600,
                           color: Colors.white,
                         ),
@@ -240,6 +260,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
           },
           body: TabBarView(
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 60.7),
+                child: ProfileTabItem(),
+              ),
               Padding(
                 padding: EdgeInsets.only(bottom: 60.7),
                 child: ProfileTabItemChats(),
@@ -260,16 +284,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   void choiceAction(String choice) {
-    if (choice == 'Edit User Profile') {
+    if (choice == 'Profile Setting') {
       Navigator.push(
           context,
           PageTransition(
-              type: PageTransitionType.rightToLeft, child: EditProfile()));
-    } else if (choice == 'Register My Store') {
+              type: PageTransitionType.rightToLeft, child: ProfileSetting()));
+    } else if (choice == 'Share Profile') {
+      print('Share Profile');
+    } else if (choice == 'Term of Use') {
       Navigator.push(
           context,
           PageTransition(
-              type: PageTransitionType.rightToLeft, child: Register()));
+              type: PageTransitionType.rightToLeft, child: TermOfUse()));
+    } else if (choice == 'Rate App') {
+      print('Rate App');
+    } else if (choice == 'Logout') {
+      logoutDialogue();
     }
   }
 }
