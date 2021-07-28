@@ -16,8 +16,8 @@ class _LoginState extends State<Login> {
   String phoneNumber = '';
   String phoneIsoCode;
   final TextEditingController controller = TextEditingController();
-  String initialCountry = 'IN';
-  PhoneNumber number = PhoneNumber(isoCode: 'IN');
+  String initialCountry = 'MY';
+  PhoneNumber number = PhoneNumber(isoCode: 'MY');
   void onPhoneNumberChange(
       String number, String internationalizedPhoneNumber, String isoCode) {
     setState(() {
@@ -67,44 +67,38 @@ class _LoginState extends State<Login> {
                   backgroundColor: Colors.transparent,
                   elevation: 0.0,
                   leading: InkWell(
-                    onTap: () {Navigator.pop(context);
+                    onTap: () {
+                      Navigator.pop(context);
                     },
                     child: Icon(
-                      Icons.arrow_back,
-                      color: white,
+                      Icons.arrow_back_ios,
+                      color: grey,
                     ),
                   ),
                 ),
-                body: ListView(
-                  physics: BouncingScrollPhysics(),
+                body: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
-                    SizedBox(height: 400.0),
-                    Padding(
-                      padding: EdgeInsets.only(top: 20.0, left: 30.0),
-                      child: Text(
-                        'Welcome back',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.w600,
-                        ),
+                    Text(
+                      'Welcome back',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30.0,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                     SizedBox(height: 10.0),
-                    Padding(
-                      padding: EdgeInsets.only(left: 30.0),
-                      child: Text(
-                        'Login in your account',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w400,
-                        ),
+                    Text(
+                      'Login in your account',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                     SizedBox(height: 30.0),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal:20.0),
+                      padding: EdgeInsets.symmetric(horizontal: 20.0),
                       child: Container(
                         padding: EdgeInsets.only(left: 10.0),
                         decoration: BoxDecoration(
@@ -119,9 +113,9 @@ class _LoginState extends State<Login> {
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               labelText: 'Email',
-                                labelStyle:  TextStyle(
-                                  color: white,
-                                ),
+                              labelStyle: TextStyle(
+                                color: white,
+                              ),
                             ),
                           ),
                         ),
@@ -129,7 +123,7 @@ class _LoginState extends State<Login> {
                     ),
                     SizedBox(height: 10.0),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal:20.0),
+                      padding: EdgeInsets.symmetric(horizontal: 20.0),
                       child: Container(
                         padding: EdgeInsets.only(left: 10.0),
                         decoration: BoxDecoration(
@@ -142,7 +136,7 @@ class _LoginState extends State<Login> {
                             obscureText: true,
                             decoration: InputDecoration(
                               labelText: 'Password',
-                              labelStyle:  TextStyle(
+                              labelStyle: TextStyle(
                                 color: white,
                               ),
                             ),

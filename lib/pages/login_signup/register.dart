@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:tiktok_ui/pages/login_signup/otp.dart';
+import 'package:tiktok_ui/theme/colors.dart';
 
 class Register extends StatelessWidget {
   @override
@@ -41,6 +42,15 @@ class Register extends StatelessWidget {
             child: Scaffold(
               backgroundColor: Colors.transparent,
               appBar: AppBar(
+                leading: IconButton(
+                  icon: Icon(
+                    Icons.arrow_back_ios,
+                    color: grey,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
                 backgroundColor: Colors.transparent,
                 elevation: 0.0,
               ),
@@ -72,15 +82,16 @@ class Register extends StatelessWidget {
                   ),
                   SizedBox(height: 50.0),
                   Padding(
-                    padding: const EdgeInsets.only(right:20.0, left: 20.0),
+                    padding: const EdgeInsets.only(right: 20.0, left: 20.0),
                     child: Container(
                       decoration: BoxDecoration(
                         color: Colors.grey[200].withOpacity(0.3),
-                        borderRadius: BorderRadius.all(Radius.circular(20.0),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(20.0),
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(right:20.0, left: 20.0),
+                        padding: const EdgeInsets.only(right: 20.0, left: 20.0),
                         child: InternationalPhoneNumberInput(
                           textStyle: TextStyle(
                             color: Colors.white,
@@ -100,10 +111,9 @@ class Register extends StatelessWidget {
                             contentPadding: EdgeInsets.only(left: 20.0),
                             hintText: 'Phone Number',
                             hintStyle: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.w500
-                            ),
+                                color: Colors.white,
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.w500),
                           ),
                         ),
                       ),
