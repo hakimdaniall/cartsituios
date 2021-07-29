@@ -53,33 +53,34 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
               ),
               child: Scaffold(
-                  backgroundColor: Colors.transparent,
-                  body: Stack(
-                    children: [
-                      Center(
-                        child: Container(
-                          alignment: Alignment.center,
-                          width: 200,
-                          height: 200,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage('assets/cartsitulogo.png'),
-                                fit: BoxFit.cover),
-                          ),
+                backgroundColor: Colors.transparent,
+                body: Stack(
+                  children: [
+                    Center(
+                      child: Container(
+                        alignment: Alignment.center,
+                        width: 200,
+                        height: 200,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage('assets/cartsitulogo.png'),
+                              fit: BoxFit.cover),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 8.0),
-                        child: Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Text(
-                            'Pacton Technologies Sdn. Bhd',
-                            style: TextStyle(color: grey),
-                          ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 8.0),
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Text(
+                          'Pacton Technologies Sdn. Bhd',
+                          style: TextStyle(color: grey),
                         ),
-                      )
-                    ],
-                  )),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
         ],

@@ -33,7 +33,7 @@ class _CreatorProfileScreenState extends State<CreatorProfileScreen> {
                   backgroundColor: Colors.black,
                   elevation: 0.0,
                   leading: IconButton(
-                    icon: Icon(Icons.arrow_back, color: Colors.white),
+                    icon: Icon(Icons.arrow_back_ios, color: Colors.white),
                     onPressed: () {
                       Navigator.pop(context);
                     },

@@ -19,31 +19,30 @@ class CartScreen extends StatelessWidget {
     return AppBar(
       backgroundColor: appBgColor,
       elevation: 0.0,
+      centerTitle: true,
       leading: InkWell(
         onTap: () {
           Navigator.pop(context);
         },
         child: Icon(
-          Icons.arrow_back,
+          Icons.arrow_back_ios,
           color: white,
         ),
       ),
-      title: Center(
-        child: Column(
-          children: [
-            Text(
-              'Your Cart',
-              style: TextStyle(color: Colors.white),
+      title: Column(
+        children: [
+          Text(
+            'Your Cart',
+            style: TextStyle(color: Colors.white),
+          ),
+          Text(
+            '${demoCarts.length} items',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 12.0,
             ),
-            Text(
-              '${demoCarts.length} items',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 12.0,
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

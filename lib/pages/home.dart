@@ -8,6 +8,7 @@ import 'package:tiktok_ui/pages/creator_profile/creator_profile.dart';
 import 'package:tiktok_ui/pages/notifications_messages/notifications.dart';
 import 'package:tiktok_ui/pages/record_video/record_video.dart';
 import 'package:tiktok_ui/pages/search/search.dart';
+import 'package:tiktok_ui/pages/store/store_screen.dart';
 import 'package:tiktok_ui/pages/wishlist/wishlist_screen.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:math' as math;
@@ -242,7 +243,7 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  CreatorProfileScreen()));
+                                                  StoreScreen()));
                                     },
                                     child: CircleAvatar(
                                       radius: 20,
