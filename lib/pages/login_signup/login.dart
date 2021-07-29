@@ -6,6 +6,8 @@ import 'package:page_transition/page_transition.dart';
 import 'package:tiktok_ui/pages/login_signup/register.dart';
 import 'package:tiktok_ui/theme/colors.dart';
 
+import '../home.dart';
+
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
@@ -154,7 +156,7 @@ class _LoginState extends State<Login> {
                               context,
                               PageTransition(
                                   type: PageTransitionType.rightToLeft,
-                                  child: Register()));
+                                  child: Home()));
                         },
                         child: Container(
                           height: 50.0,
