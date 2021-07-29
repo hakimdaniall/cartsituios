@@ -4,6 +4,7 @@ import 'package:tiktok_ui/pages/my_store/my_store_view_products/components/selec
 import 'package:tiktok_ui/pages/my_store/my_store_view_products/components/inventory_bar.dart';
 
 class SelectedProductInventory extends StatefulWidget {
+  static const String id = 'select_product_inventory';
   const SelectedProductInventory({Key key}) : super(key: key);
 
   @override

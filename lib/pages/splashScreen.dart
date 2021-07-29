@@ -7,11 +7,13 @@ import 'package:tiktok_ui/pages/login_signup/register.dart';
 import 'package:tiktok_ui/theme/colors.dart';
 
 class SplashScreen extends StatefulWidget {
+  static const String id = 'splash_screen';
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
   @override
   void initState() {
     super.initState();

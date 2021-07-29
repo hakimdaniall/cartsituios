@@ -14,6 +14,7 @@ import '../login_signup/register.dart';
 import 'edit_profile.dart';
 
 class MyStoreProfileScreen extends StatefulWidget {
+  static const String id = 'mystoreprofile_screen';
   @override
   _MyStoreProfileScreenState createState() => _MyStoreProfileScreenState();
 }

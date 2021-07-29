@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyReview extends StatefulWidget {
+  static const String id = 'my_review';
   final tabItem = [
     {'image': 'assets/dance/dance_2.jpg'},
     {'image': 'assets/dance/dance_2.jpg'},

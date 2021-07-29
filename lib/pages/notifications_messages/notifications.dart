@@ -3,6 +3,7 @@ import 'package:tiktok_ui/pages/notifications_messages/messages.dart';
 import 'package:tiktok_ui/pages/notifications_messages/notification_list.dart';
 
 class Notifications extends StatefulWidget {
+  static const String id = 'notification';
   @override
   _NotificationsState createState() => _NotificationsState();
 }
@@ -60,14 +61,16 @@ class _NotificationsState extends State<Notifications> {
                     style: (messages) ? activeTextStyle : nonActiveTextStyle,
                   ),
                   SizedBox(width: 3.0),
-                  (notifications) ? Container(
-                    height: 7.0,
-                    width: 7.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(3.5),
-                      color: Colors.orange,
-                    ),
-                  ) : Container(),
+                  (notifications)
+                      ? Container(
+                          height: 7.0,
+                          width: 7.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(3.5),
+                            color: Colors.orange,
+                          ),
+                        )
+                      : Container(),
                 ],
               ),
             ),

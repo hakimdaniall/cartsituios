@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:tiktok_ui/theme/colors.dart';
 
 class EditProfile extends StatefulWidget {
+  static const String id = 'edit_profile';
   @override
   _EditProfileState createState() => _EditProfileState();
 }

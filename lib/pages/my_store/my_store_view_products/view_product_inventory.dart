@@ -4,6 +4,7 @@ import 'package:tiktok_ui/pages/my_store/my_store_view_products/components/inven
 import 'package:tiktok_ui/theme/colors.dart';
 
 class ViewProductInventory extends StatefulWidget {
+  static const String id = 'view_product_inventory';
   const ViewProductInventory({Key key}) : super(key: key);
 
   @override

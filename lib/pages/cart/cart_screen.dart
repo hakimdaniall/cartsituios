@@ -5,6 +5,8 @@ import 'package:tiktok_ui/pages/cart/components/body.dart';
 import 'package:tiktok_ui/pages/cart/components/checkout_card.dart';
 
 class CartScreen extends StatelessWidget {
+  static const String id = 'cart_screen';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

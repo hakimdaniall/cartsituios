@@ -2,6 +2,7 @@ import 'package:custom_switch/custom_switch.dart';
 import 'package:flutter/material.dart';
 
 class ProfileSetting extends StatefulWidget {
+  static const String id = 'profile_setting';
   @override
   _ProfileSettingState createState() => _ProfileSettingState();
 }

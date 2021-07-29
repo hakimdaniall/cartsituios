@@ -4,6 +4,7 @@ import 'package:tiktok_ui/pages/my_store/my_store_view_products/components/item_
 import 'package:tiktok_ui/theme/colors.dart';
 
 class ViewMyStoreProducts extends StatefulWidget {
+  static const String id = 'view_my_store_products';
   const ViewMyStoreProducts({Key key}) : super(key: key);
 
   @override
@@ -65,9 +66,9 @@ class _ViewMyStoreProductsState extends State<ViewMyStoreProducts> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(
-            Icons.add,
-            color: Colors.white,
-            size: 30,
+          Icons.add,
+          color: Colors.white,
+          size: 30,
         ),
         backgroundColor: Color(0xFFDA0037),
       ),

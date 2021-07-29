@@ -7,6 +7,7 @@ import 'package:tiktok_ui/theme/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class StoreScreen extends StatefulWidget {
+  static const String id = 'store_screen';
   @override
   _StoreScreenState createState() => _StoreScreenState();
 }

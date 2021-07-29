@@ -3,6 +3,7 @@ import 'package:tiktok_ui/pages/store/settings.dart';
 import 'package:tiktok_ui/theme/colors.dart';
 
 class EditStore extends StatefulWidget {
+  static const String id = 'edit_store';
   @override
   _EditStoreState createState() => _EditStoreState();
 }

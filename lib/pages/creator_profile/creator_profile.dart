@@ -5,6 +5,7 @@ import 'package:tiktok_ui/pages/profile/profile_tab_item.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CreatorProfileScreen extends StatefulWidget {
+  static const String id = 'creatorprofile_screen';
   @override
   _CreatorProfileScreenState createState() => _CreatorProfileScreenState();
 }

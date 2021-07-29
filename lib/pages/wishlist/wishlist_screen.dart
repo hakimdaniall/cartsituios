@@ -3,7 +3,7 @@ import 'package:tiktok_ui/pages/wishlist/components/filter_bar.dart';
 import 'package:tiktok_ui/theme/colors.dart';
 
 class WishlistScreen extends StatefulWidget {
-  const WishlistScreen({Key key}) : super(key: key);
+  static const String id = 'wishlist_screen';
 
   @override
   _WishlistScreenState createState() => _WishlistScreenState();
