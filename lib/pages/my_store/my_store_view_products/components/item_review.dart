@@ -38,10 +38,7 @@ class ProductItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(5.0),
           color: Colors.black38,
           border: Border.all(
-            color: Colors.grey,
-            width: 1.0,
-            style: BorderStyle.solid
-          ),
+              color: Colors.grey, width: 1.0, style: BorderStyle.solid),
           boxShadow: [
             BoxShadow(
               color: Colors.white60,
@@ -75,14 +72,14 @@ class ProductItem extends StatelessWidget {
                   Text(
                     itemName,
                     style: TextStyle(
-                        color: grey, fontWeight: FontWeight.bold, fontSize: 16.0),
+                        color: grey,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16.0),
                   ),
                   SizedBox(height: 5.0),
                   Text(
                     price,
-                    style: TextStyle(
-                        color: Colors.grey[400],
-                        fontSize: 14),
+                    style: TextStyle(color: Colors.grey[400], fontSize: 14),
                   ),
                 ],
               ),
