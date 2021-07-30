@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tiktok_ui/pages/my_store/my_store_view_products/components/filter_bar.dart';
-import 'package:tiktok_ui/pages/my_store/my_store_view_products/components/item_review.dart';
+import 'package:tiktok_ui/pages/my_store/my_store_view_products/components/item_view.dart';
 import 'package:tiktok_ui/theme/colors.dart';
 
 class ViewMyStoreProducts extends StatefulWidget {

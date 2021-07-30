@@ -26,6 +26,7 @@ import 'package:tiktok_ui/pages/profile/profile.dart';
 import 'package:tiktok_ui/pages/profile/my_store_profile.dart';
 import 'package:tiktok_ui/pages/review/review_screen.dart';
 import 'package:tiktok_ui/pages/my_store/my_store_view_products/my_store_view_products.dart';
+import 'package:tiktok_ui/pages/my_store/my_store_add_products/my_store_add_products.dart';
 import 'package:tiktok_ui/pages/my_store/my_store_view_products/view_product_inventory.dart';
 import 'package:tiktok_ui/pages/my_store/my_store_view_products/selected_product_inventory.dart';
 import 'pages/home.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: AddMyStoreProducts(),
       routes: {
         SplashScreen.id: (context) => SplashScreen(),
         EditProfile.id: (context) => EditProfile(),
@@ -63,6 +64,7 @@ class MyApp extends StatelessWidget {
         SelectedProductInventory.id: (context) => SelectedProductInventory(),
         ViewProductInventory.id: (context) => ViewProductInventory(),
         ViewMyStoreProducts.id: (context) => ViewMyStoreProducts(),
+        AddMyStoreProducts.id: (context) => AddMyStoreProducts(),
         ChatScreen.id: (context) => ChatScreen(),
         Messages.id: (context) => Messages(),
         NotificationList.id: (context) => NotificationList(),
