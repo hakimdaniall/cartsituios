@@ -4,7 +4,7 @@ import 'package:tiktok_ui/pages/review/components/item_review.dart';
 import 'package:tiktok_ui/theme/colors.dart';
 
 class ReviewScreen extends StatefulWidget {
-  const ReviewScreen({Key key}) : super(key: key);
+  static const String id = 'review_screen';
 
   @override
   _ReviewScreenState createState() => _ReviewScreenState();

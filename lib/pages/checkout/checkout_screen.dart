@@ -5,6 +5,7 @@ import 'package:tiktok_ui/pages/checkout/components/body.dart';
 import 'package:tiktok_ui/theme/colors.dart';
 
 class CheckOutScreen extends StatelessWidget {
+  static const String id = 'checkout_screen';
   const CheckOutScreen({Key key}) : super(key: key);
 
   @override

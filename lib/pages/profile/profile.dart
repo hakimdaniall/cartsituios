@@ -14,6 +14,7 @@ import '../login_signup/register.dart';
 import 'edit_profile.dart';
 
 class ProfileScreen extends StatefulWidget {
+  static const String id = 'profile_screen';
   @override
   _ProfileScreenState createState() => _ProfileScreenState();
 }

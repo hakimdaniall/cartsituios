@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TermOfUse extends StatelessWidget {
+  static const String id = 'termofuse';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

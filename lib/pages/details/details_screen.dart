@@ -6,6 +6,7 @@ import 'components/custom_app_bar.dart';
 import 'components/body.dart';
 
 class DetailsScreen extends StatelessWidget {
+  static const String id = 'details_screen';
   const DetailsScreen({Key key}) : super(key: key);
 
   @override

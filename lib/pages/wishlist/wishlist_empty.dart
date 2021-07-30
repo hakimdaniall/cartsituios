@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tiktok_ui/theme/colors.dart';
 
 class WishlistEmpty extends StatelessWidget {
+  static const String id = 'wishlist_empty';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

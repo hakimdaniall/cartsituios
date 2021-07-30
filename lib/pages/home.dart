@@ -17,6 +17,7 @@ import 'package:tiktok_ui/pages/profile/profile.dart';
 import '../theme/colors.dart';
 
 class Home extends StatefulWidget {
+  static const String id = 'home';
   @override
   _Home createState() => _Home();
 }

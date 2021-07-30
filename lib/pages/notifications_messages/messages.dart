@@ -3,6 +3,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:tiktok_ui/pages/notifications_messages/chat.dart';
 
 class Messages extends StatefulWidget {
+  static const String id = 'messages';
   @override
   _MessagesState createState() => _MessagesState();
 }
@@ -75,8 +76,11 @@ class _MessagesState extends State<Messages> {
       itemBuilder: (context, index) {
         final item = messageList[index];
         return InkWell(
-          onTap: (){
-            Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: ChatScreen()));
+          onTap: () {
+            Navigator.push(
+                context,
+                PageTransition(
+                    type: PageTransitionType.rightToLeft, child: ChatScreen()));
           },
           child: Container(
             child: Column(

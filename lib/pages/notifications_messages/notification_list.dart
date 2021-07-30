@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tiktok_ui/pages/creator_profile/creator_profile.dart';
 
 class NotificationList extends StatefulWidget {
+  static const String id = 'notification_list';
   @override
   _NotificationListState createState() => _NotificationListState();
 }
