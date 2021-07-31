@@ -10,9 +10,9 @@ class AddMyStoreProducts extends StatefulWidget {
 }
 
 class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
-  String name = 'Hafizul Hafiz';
-  String number = '9603456878';
-  String email = 'test@abc.com';
+  String name = '';
+  String number = '';
+  String email = '';
   String userAddressLine1 = '';
   String userAddressLine2 = '';
   String userAddressCity = '';
@@ -44,7 +44,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
 
-    changeName() {
+    addProductName() {
       showDialog(
         context: context,
         barrierDismissible: false,
@@ -62,7 +62,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    "Change Name",
+                    "Product Name",
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.w600,
@@ -76,9 +76,108 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                       fontSize: 16.0,
                       fontWeight: FontWeight.w500,
                     ),
-                    keyboardType: TextInputType.number,
+                    keyboardType: TextInputType.text,
                     decoration: InputDecoration(
-                      hintText: 'Enter Your Name',
+                      hintText: 'Enter Your Product Name',
+                      hintStyle: TextStyle(
+                        color: Colors.grey[400],
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      InkWell(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Container(
+                          width: (width / 3.5),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                            color: Colors.grey[300],
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: Text(
+                            'Cancel',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            name = nameController.text;
+                            Navigator.pop(context);
+                          });
+                        },
+                        child: Container(
+                          width: (width / 3.5),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      );
+    }
+
+    addProductDescription() {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          // return object of type Dialog
+          return Dialog(
+            elevation: 0.0,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)),
+            child: Container(
+              height: 210.0,
+              padding: EdgeInsets.all(20.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "Product Description",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  TextField(
+                    cursorColor: Colors.black,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      hintText: 'Enter Your Product Description',
                       hintStyle: TextStyle(
                         color: Colors.grey[400],
                         fontSize: 16.0,
@@ -126,7 +225,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                           child: Text(
-                            'Okay',
+                            'Save',
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               color: Colors.white,
@@ -144,7 +243,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
       );
     }
 
-    changePhoneNumber() {
+    addProductKeyword() {
       showDialog(
         context: context,
         barrierDismissible: false,
@@ -162,7 +261,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    "Change Phone Number",
+                    "Product Keyword",
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.w600,
@@ -170,7 +269,204 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                   ),
                   SizedBox(height: 10.0),
                   TextField(
-                    controller: phoneController,
+                    cursorColor: Colors.black,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      hintText: 'Enter Your Product Keyword',
+                      hintStyle: TextStyle(
+                        color: Colors.grey[400],
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      InkWell(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Container(
+                          width: (width / 3.5),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                            color: Colors.grey[300],
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: Text(
+                            'Cancel',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            number = nameController.text;
+                            Navigator.pop(context);
+                          });
+                        },
+                        child: Container(
+                          width: (width / 3.5),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      );
+    }
+
+    addProductRelatedKey() {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          // return object of type Dialog
+          return Dialog(
+            elevation: 0.0,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)),
+            child: Container(
+              height: 210.0,
+              padding: EdgeInsets.all(20.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "Product Related Key",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  TextField(
+                    cursorColor: Colors.black,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      hintText: 'Enter Your Product Related Key',
+                      hintStyle: TextStyle(
+                        color: Colors.grey[400],
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      InkWell(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Container(
+                          width: (width / 3.5),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                            color: Colors.grey[300],
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: Text(
+                            'Cancel',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            number = nameController.text;
+                            Navigator.pop(context);
+                          });
+                        },
+                        child: Container(
+                          width: (width / 3.5),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      );
+    }
+
+    addProductPrice() {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          // return object of type Dialog
+          return Dialog(
+            elevation: 0.0,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)),
+            child: Container(
+              height: 210.0,
+              padding: EdgeInsets.all(20.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "Add Product Price",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  TextField(
                     cursorColor: Colors.black,
                     style: TextStyle(
                       fontSize: 16.0,
@@ -178,7 +474,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                     ),
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                      hintText: 'Enter Phone Number',
+                      hintText: 'Enter Product Price (RM)',
                       hintStyle: TextStyle(
                         color: Colors.grey[400],
                         fontSize: 16.0,
@@ -226,7 +522,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                           child: Text(
-                            'Okay',
+                            'Save',
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               color: Colors.white,
@@ -244,7 +540,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
       );
     }
 
-    changePassword() {
+    addProductSalePrice() {
       showDialog(
         context: context,
         barrierDismissible: false,
@@ -255,14 +551,14 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0)),
             child: Container(
-              height: 305.0,
+              height: 210.0,
               padding: EdgeInsets.all(20.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    "Change Your Password",
+                    "Add Product Sale Price",
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.w600,
@@ -270,143 +566,14 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                   ),
                   SizedBox(height: 10.0),
                   TextField(
-                    obscureText: true,
                     cursorColor: Colors.black,
                     style: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.w500,
                     ),
+                    keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                      hintText: 'Old Password',
-                      hintStyle: TextStyle(
-                        color: Colors.grey[400],
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  TextField(
-                    obscureText: true,
-                    cursorColor: Colors.black,
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    decoration: InputDecoration(
-                      hintText: 'New Password',
-                      hintStyle: TextStyle(
-                        color: Colors.grey[400],
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  TextField(
-                    obscureText: true,
-                    cursorColor: Colors.black,
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    decoration: InputDecoration(
-                      hintText: 'Confirm New Password',
-                      hintStyle: TextStyle(
-                        color: Colors.grey[400],
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      InkWell(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Container(
-                          width: (width / 3.5),
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.all(10.0),
-                          decoration: BoxDecoration(
-                            color: Colors.grey[300],
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                          child: Text(
-                            'Cancel',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Container(
-                          width: (width / 3.5),
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.all(10.0),
-                          decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                          child: Text(
-                            'Okay',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          );
-        },
-      );
-    }
-
-    changeEmail() {
-      showDialog(
-        context: context,
-        barrierDismissible: false,
-        builder: (BuildContext context) {
-          // return object of type Dialog
-          return Dialog(
-            elevation: 0.0,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0)),
-            child: Container(
-              height: 200.0,
-              padding: EdgeInsets.all(20.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    "Change Email",
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  SizedBox(height: 10.0),
-                  TextField(
-                    controller: emailController,
-                    cursorColor: Colors.black,
-                    keyboardType: TextInputType.emailAddress,
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    decoration: InputDecoration(
-                      hintText: 'Enter Email',
+                      hintText: 'Enter Product Sale Price (RM)',
                       hintStyle: TextStyle(
                         color: Colors.grey[400],
                         fontSize: 16.0,
@@ -441,7 +608,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            email = emailController.text;
+                            number = phoneController.text;
                             Navigator.pop(context);
                           });
                         },
@@ -454,7 +621,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                           child: Text(
-                            'Okay',
+                            'Save',
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               color: Colors.white,
@@ -472,7 +639,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
       );
     }
 
-    changeUserAddress() {
+    addProductWeight() {
       showDialog(
         context: context,
         barrierDismissible: false,
@@ -483,14 +650,14 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0)),
             child: Container(
-              height: 500.0,
+              height: 210.0,
               padding: EdgeInsets.all(20.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    "Address",
+                    "Add Product Weight",
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.w600,
@@ -498,87 +665,14 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                   ),
                   SizedBox(height: 10.0),
                   TextField(
-                    controller: userAddressLine1Controller,
                     cursorColor: Colors.black,
-                    keyboardType: TextInputType.text,
                     style: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.w500,
                     ),
+                    keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                      hintText: 'Enter Address Line 1',
-                      hintStyle: TextStyle(
-                        color: Colors.grey[400],
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
-                  TextField(
-                    controller: userAddressLine2Controller,
-                    cursorColor: Colors.black,
-                    keyboardType: TextInputType.text,
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    decoration: InputDecoration(
-                      hintText: 'Enter Address Line 2',
-                      hintStyle: TextStyle(
-                        color: Colors.grey[400],
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
-                  TextField(
-                    controller: userAddressCityController,
-                    cursorColor: Colors.black,
-                    keyboardType: TextInputType.text,
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    decoration: InputDecoration(
-                      hintText: 'Enter City',
-                      hintStyle: TextStyle(
-                        color: Colors.grey[400],
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
-                  TextField(
-                    controller: userAddressPostcodeController,
-                    cursorColor: Colors.black,
-                    keyboardType: TextInputType.text,
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    decoration: InputDecoration(
-                      hintText: 'Enter Postcode',
-                      hintStyle: TextStyle(
-                        color: Colors.grey[400],
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
-                  TextField(
-                    controller: userAddressStateController,
-                    cursorColor: Colors.black,
-                    keyboardType: TextInputType.text,
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    decoration: InputDecoration(
-                      hintText: 'Enter State',
+                      hintText: 'Enter Product Weight (Kg)',
                       hintStyle: TextStyle(
                         color: Colors.grey[400],
                         fontSize: 16.0,
@@ -613,7 +707,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            userAddressLine1 = userAddressLine1Controller.text;
+                            number = phoneController.text;
                             Navigator.pop(context);
                           });
                         },
@@ -626,7 +720,256 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                           child: Text(
-                            'Okay',
+                            'Save',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      );
+    }
+
+    addPackageSize() {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          // return object of type Dialog
+          return Dialog(
+            elevation: 0.0,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)),
+            child: Container(
+              height: 300.0,
+              padding: EdgeInsets.all(20.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "Add Package Size (cm)",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  TextField(
+                    cursorColor: Colors.black,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: 'Enter Package Width',
+                      hintStyle: TextStyle(
+                        color: Colors.grey[400],
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  TextField(
+                    cursorColor: Colors.black,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: 'Enter Package Height',
+                      hintStyle: TextStyle(
+                        color: Colors.grey[400],
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  TextField(
+                    cursorColor: Colors.black,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: 'Enter Package Length',
+                      hintStyle: TextStyle(
+                        color: Colors.grey[400],
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      InkWell(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Container(
+                          width: (width / 3.5),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                            color: Colors.grey[300],
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: Text(
+                            'Cancel',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            number = phoneController.text;
+                            Navigator.pop(context);
+                          });
+                        },
+                        child: Container(
+                          width: (width / 3.5),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      );
+    }
+
+    addProductFeatures() {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          // return object of type Dialog
+          return Dialog(
+            elevation: 0.0,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)),
+            child: Container(
+              height: 250.0,
+              padding: EdgeInsets.all(20.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "Add Package Features",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  TextField(
+                    cursorColor: Colors.black,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: 'Enter Feature Name',
+                      hintStyle: TextStyle(
+                        color: Colors.grey[400],
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  TextField(
+                    cursorColor: Colors.black,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: 'Enter Feature Value (RM)',
+                      hintStyle: TextStyle(
+                        color: Colors.grey[400],
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      InkWell(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Container(
+                          width: (width / 3.5),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                            color: Colors.grey[300],
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: Text(
+                            'Cancel',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            number = phoneController.text;
+                            Navigator.pop(context);
+                          });
+                        },
+                        child: Container(
+                          width: (width / 3.5),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: Text(
+                            'Save',
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               color: Colors.white,
@@ -682,7 +1025,9 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
             Icons.arrow_back_ios,
             color: grey,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
         backgroundColor: Colors.black,
         centerTitle: true,
@@ -698,7 +1043,9 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
           IconButton(
             icon: Icon(Icons.save),
             color: grey,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
           )
         ],
       ),
@@ -734,7 +1081,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                         ),
                         IconButton(
                           onPressed: () {
-                            changeName();
+                            addProductName();
                           },
                           icon: Icon(
                             Icons.edit,
@@ -768,7 +1115,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                         ),
                         IconButton(
                           onPressed: () {
-                            changePhoneNumber();
+                            addProductDescription();
                           },
                           icon: Icon(
                             Icons.edit,
@@ -872,16 +1219,21 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.all(Radius.circular(12)),
                                 child: Container(
-                                  height: 30,
+                                  height: 33,
                                   width: 120,
                                   color: Colors.black,
                                   alignment: Alignment.center,
-                                  child: Text(
-                                    'Add Keyword',
-                                    style: TextStyle(
-                                      fontSize: 14.0,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white,
+                                  child: TextButton(
+                                    onPressed: () {
+                                      addProductKeyword();
+                                    },
+                                    child: Text(
+                                      'Add Keyword',
+                                      style: TextStyle(
+                                        fontSize: 14.0,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.white,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -916,16 +1268,21 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.all(Radius.circular(12)),
                                 child: Container(
-                                  height: 30,
+                                  height: 33,
                                   width: 140,
                                   color: Colors.black,
                                   alignment: Alignment.center,
-                                  child: Text(
-                                    'Add Related Key',
-                                    style: TextStyle(
-                                      fontSize: 14.0,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white,
+                                  child: TextButton(
+                                    onPressed: () {
+                                      addProductRelatedKey();
+                                    },
+                                    child: Text(
+                                      'Add Related Key',
+                                      style: TextStyle(
+                                        fontSize: 14.0,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.white,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -995,7 +1352,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                         ),
                         IconButton(
                           onPressed: () {
-                            changeName();
+                            addProductPrice();
                           },
                           icon: Icon(
                             Icons.edit,
@@ -1037,7 +1394,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                         ),
                         IconButton(
                           onPressed: () {
-                            changeName();
+                            addProductSalePrice();
                           },
                           icon: Icon(
                             Icons.edit,
@@ -1079,7 +1436,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                         ),
                         IconButton(
                           onPressed: () {
-                            changeName();
+                            addProductWeight();
                           },
                           icon: Icon(
                             Icons.edit,
@@ -1121,7 +1478,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                         ),
                         IconButton(
                           onPressed: () {
-                            changeName();
+                            addPackageSize();
                           },
                           icon: Icon(
                             Icons.edit,
@@ -1155,7 +1512,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                         ),
                         IconButton(
                           onPressed: () {
-                            changeName();
+                            showUploadImageActionSheet();
                           },
                           icon: Icon(
                             Icons.edit,
@@ -1210,7 +1567,7 @@ class _AddMyStoreProductsState extends State<AddMyStoreProducts> {
                         IconButton(
                           padding: EdgeInsets.only(bottom: 5.0),
                           onPressed: () {
-                            showUploadImageActionSheet();
+                            addProductFeatures();
                           },
                           icon: Icon(
                             Icons.add_circle_rounded,

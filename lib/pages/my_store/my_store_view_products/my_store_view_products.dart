@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tiktok_ui/pages/my_store/my_store_view_products/components/filter_bar.dart';
 import 'package:tiktok_ui/pages/my_store/my_store_view_products/components/item_view.dart';
 import 'package:tiktok_ui/theme/colors.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:tiktok_ui/pages/my_store/my_store_add_products/my_store_add_products.dart';
 
 class ViewMyStoreProducts extends StatefulWidget {
   static const String id = 'view_my_store_products';
@@ -64,7 +66,12 @@ class _ViewMyStoreProductsState extends State<ViewMyStoreProducts> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              PageTransition(
+                  type: PageTransitionType.rightToLeft, child: AddMyStoreProducts()));
+        },
         child: const Icon(
           Icons.add,
           color: Colors.white,
