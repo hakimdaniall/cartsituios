@@ -284,10 +284,10 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
                                               builder: (context) =>
                                                   CartScreen()));
                                     },
-                                    child: SvgPicture.asset(
-                                      'assets/icons/Cart Icon.svg',
+                                    child: Icon(
+                                      Icons.shopping_cart,
                                       color: white,
-                                      height: 25,
+                                      size: 30,
                                     ),
                                   ),
                                 ],
