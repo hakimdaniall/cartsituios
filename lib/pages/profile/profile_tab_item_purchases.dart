@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:tiktok_ui/pages/details/components/body.dart';
+import 'package:tiktok_ui/pages/details/details_screen.dart';
 
 class ProfileTabItemPurchases extends StatefulWidget {
   @override
@@ -34,8 +35,12 @@ class _ProfileTabItemState extends State<ProfileTabItemPurchases> {
       itemBuilder: (context, index) {
         final item = messageList[index];
         return InkWell(
-          onTap: (){
-            Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: Body()));
+          onTap: () {
+            Navigator.push(
+                context,
+                PageTransition(
+                    type: PageTransitionType.rightToLeft,
+                    child: DetailsScreen()));
           },
           child: Container(
             child: Column(

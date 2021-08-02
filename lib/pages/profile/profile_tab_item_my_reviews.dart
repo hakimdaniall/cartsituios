@@ -35,12 +35,7 @@ class _ProfileTabItemState extends State<ProfileTabItemMyReviews> {
       itemBuilder: (context, index) {
         final item = messageList[index];
         return InkWell(
-          onTap: () {
-            Navigator.push(
-                context,
-                PageTransition(
-                    type: PageTransitionType.rightToLeft, child: Body()));
-          },
+          onTap: () {},
           child: Container(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
