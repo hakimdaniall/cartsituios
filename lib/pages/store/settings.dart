@@ -18,7 +18,7 @@ class _SettingsPageState extends State<SettingsPage> {
             Navigator.of(context).pop();
           },
           icon: Icon(
-            Icons.arrow_back,
+            Icons.arrow_back_ios,
             color: Colors.green,
           ),
         ),
