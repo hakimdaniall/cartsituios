@@ -257,17 +257,17 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
                                       ),
                                     ),
                                   ),
-                                  Align(
-                                    alignment: Alignment.bottomCenter,
-                                    child: CircleAvatar(
-                                      radius: 10,
-                                      backgroundColor:
-                                          Color(0xfd2c58).withOpacity(1),
-                                      child: Center(
-                                          child: Icon(Icons.add,
-                                              size: 15, color: Colors.white)),
-                                    ),
-                                  )
+                                  // Align(
+                                  //   alignment: Alignment.bottomCenter,
+                                  //   child: CircleAvatar(
+                                  //     radius: 10,
+                                  //     backgroundColor:
+                                  //         Color(0xfd2c58).withOpacity(1),
+                                  //     child: Center(
+                                  //         child: Icon(Icons.add,
+                                  //             size: 15, color: Colors.white)),
+                                  //   ),
+                                  // )
                                 ],
                               ),
                             ),
@@ -286,7 +286,7 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
                                     },
                                     child: SvgPicture.asset(
                                       'assets/icons/Cart Icon.svg',
-                                      color: grey,
+                                      color: white,
                                       height: 25,
                                     ),
                                   ),

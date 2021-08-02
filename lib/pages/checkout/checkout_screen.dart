@@ -22,12 +22,13 @@ class CheckOutScreen extends StatelessWidget {
     return AppBar(
       backgroundColor: appBgColor,
       elevation: 0.0,
+      centerTitle: true,
       leading: InkWell(
         onTap: () {
           Navigator.pop(context);
         },
         child: Icon(
-          Icons.arrow_back,
+          Icons.arrow_back_ios,
           color: white,
         ),
       ),

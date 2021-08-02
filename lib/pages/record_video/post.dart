@@ -22,7 +22,7 @@ class _PostState extends State<Post> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back_ios, color: Colors.white),
         ),
         centerTitle: true,
         title: Text(

@@ -681,7 +681,9 @@ class _EditProfileState extends State<EditProfile> {
             Icons.arrow_back_ios,
             color: grey,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
         backgroundColor: Colors.black,
         centerTitle: true,
