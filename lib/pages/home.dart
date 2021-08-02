@@ -680,13 +680,11 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.star, color: white, size: 30),
+          Icon(Icons.star, color: grey, size: 30),
           Text(
             'Wishlist',
             style: TextStyle(
-                color: (notifications)
-                    ? Colors.white
-                    : Colors.white.withOpacity(0.8),
+                color: (notifications) ? grey : grey.withOpacity(0.8),
                 fontSize: 10),
           ),
         ],

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:tiktok_ui/pages/details/components/body.dart';
 
-
 class ProfileTabItemMyReviews extends StatefulWidget {
   @override
   _ProfileTabItemState createState() => _ProfileTabItemState();
@@ -18,7 +17,8 @@ class _ProfileTabItemState extends State<ProfileTabItemMyReviews> {
     {
       'productImage': 'assets/images/wireless headset.png',
       'productName': 'Wireless Headset (Bluetooth 5.0)',
-      'productReview': 'Product is very good quality. Highly recommended seller.',
+      'productReview':
+          'Product is very good quality. Highly recommended seller.',
     },
     {
       'productImage': 'assets/images/Image Popular Product 2.png',
@@ -35,8 +35,11 @@ class _ProfileTabItemState extends State<ProfileTabItemMyReviews> {
       itemBuilder: (context, index) {
         final item = messageList[index];
         return InkWell(
-          onTap: (){
-            Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: Body()));
+          onTap: () {
+            Navigator.push(
+                context,
+                PageTransition(
+                    type: PageTransitionType.rightToLeft, child: Body()));
           },
           child: Container(
             child: Column(
@@ -127,7 +130,7 @@ class _ProfileTabItemState extends State<ProfileTabItemMyReviews> {
                                   item['productReview'],
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 14.0,
+                                    fontSize: 10.0,
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
