@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "242759249657",
+    "project_id": "cartsitu-c0796",
+    "storage_bucket": "cartsitu-c0796.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242759249657:android:088f6e44e4b19f9de4bc28",
+        "android_client_info": {
+          "package_name": "com.example.tiktok_ui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "242759249657-rsdrp5n5dt1to47oqs0l73radhqt1alm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBktUs-sWckwEwzEPJMSepbitWypZ6zvfQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "242759249657-rsdrp5n5dt1to47oqs0l73radhqt1alm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
