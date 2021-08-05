@@ -5,6 +5,8 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:tiktok_ui/pages/login_signup/register.dart';
 import 'package:tiktok_ui/theme/colors.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../home.dart';
 
@@ -14,6 +16,10 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  bool showSpinner = false;
+  final _auth = FirebaseAuth.instance;
+  String email;
+  String password;
   DateTime currentBackPressTime;
   String phoneNumber = '';
   String phoneIsoCode;
@@ -109,9 +115,14 @@ class _LoginState extends State<Login> {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 28.0),
-                          child: TextField(
+                          child: TextFormField(
                             style: TextStyle(color: white),
                             obscureText: false,
+                            validator: (value) =>
+                                value.isEmpty ? 'Enter your email' : null,
+                            onChanged: (value) {
+                              email = value;
+                            },
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               labelText: 'Email',
@@ -134,8 +145,13 @@ class _LoginState extends State<Login> {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 28.0),
-                          child: TextField(
+                          child: TextFormField(
                             obscureText: true,
+                            validator: (value) =>
+                                value.isEmpty ? 'Enter your password' : null,
+                            onChanged: (value) {
+                              password = value;
+                            },
                             decoration: InputDecoration(
                               labelText: 'Password',
                               labelStyle: TextStyle(
@@ -151,12 +167,49 @@ class _LoginState extends State<Login> {
                       padding: EdgeInsets.symmetric(horizontal: 20.0),
                       child: InkWell(
                         borderRadius: BorderRadius.circular(30.0),
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              PageTransition(
-                                  type: PageTransitionType.rightToLeft,
-                                  child: Home()));
+                        onTap: () async {
+                          setState(() {
+                            showSpinner = true;
+                          });
+                          try {
+                            final user = await _auth.signInWithEmailAndPassword(
+                                email: email, password: password);
+
+                            if (user != null) {
+                              Navigator.pushNamed(context, Home.id);
+                            }
+                            setState(() {
+                              showSpinner = false;
+                            });
+                          } on FirebaseAuthException catch (e) {
+                            if (email == null) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                      content:
+                                          Text('Please enter your email')));
+                            } else if (password == null) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                      content:
+                                          Text('Please enter your password')));
+                            } else if (e.code == 'invalid-email') {
+                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                  content: Text(
+                                      'Incorrect e-mail type. Please enter the correct e-mail')));
+                            } else if (e.code == 'user-not-found') {
+                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                  content: Text(
+                                      'You are not registered yet. Please register.')));
+                            } else if (e.code == 'wrong-password') {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                      content:
+                                          Text('Wrong email or password')));
+                            }
+                            setState(() {
+                              showSpinner = false;
+                            });
+                          }
                         },
                         child: Container(
                           height: 50.0,

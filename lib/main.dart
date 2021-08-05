@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tiktok_ui/appBehaviour/my_behaviour.dart';
@@ -31,8 +32,9 @@ import 'package:tiktok_ui/pages/my_store/my_store_view_products/view_product_inv
 import 'package:tiktok_ui/pages/my_store/my_store_view_products/selected_product_inventory.dart';
 import 'pages/home.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]).then((_) {
     runApp(MyApp());

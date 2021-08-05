@@ -1,10 +1,28 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:tiktok_ui/pages/login_signup/otp.dart';
 import 'package:tiktok_ui/theme/colors.dart';
 
-class Register extends StatelessWidget {
+import '../home.dart';
+
+class Register extends StatefulWidget {
+  @override
+  _RegisterState createState() => _RegisterState();
+}
+
+class _RegisterState extends State<Register> {
+  bool showSpinner = false;
+
+  final _auth = FirebaseAuth.instance;
+
+  String email;
+
+  String password;
+
+  String confirmpassword;
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -58,7 +76,7 @@ class Register extends StatelessWidget {
                 physics: BouncingScrollPhysics(),
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.only(top: 20.0, left: 20.0),
+                    padding: EdgeInsets.only(top: 60.0, left: 20.0),
                     child: Text(
                       'Register',
                       style: TextStyle(
@@ -81,45 +99,72 @@ class Register extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 50.0),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20.0, left: 20.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200].withOpacity(0.3),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(20.0),
-                        ),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 20.0, left: 20.0),
-                        child: InternationalPhoneNumberInput(
-                          textStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w500,
-                          ),
-                          errorMessage: 'Invalid Phone Number',
-                          autoValidate: false,
-                          selectorTextStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w500,
-                          ),
-                          inputBorder: InputBorder.none,
-                          inputDecoration: InputDecoration(
-                            border: InputBorder.none,
-                            contentPadding: EdgeInsets.only(left: 20.0),
-                            hintText: 'Phone Number',
-                            hintStyle: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
+                  // Padding(
+                  //   padding: const EdgeInsets.only(right: 20.0, left: 20.0),
+                  //   child: Container(
+                  //     decoration: BoxDecoration(
+                  //       color: Colors.grey[200].withOpacity(0.3),
+                  //       borderRadius: BorderRadius.all(
+                  //         Radius.circular(20.0),
+                  //       ),
+                  //     ),
+                  //     child: Padding(
+                  //       padding: const EdgeInsets.only(right: 20.0, left: 20.0),
+                  //       child: InternationalPhoneNumberInput(
+                  //         textStyle: TextStyle(
+                  //           color: Colors.white,
+                  //           fontSize: 16.0,
+                  //           fontWeight: FontWeight.w500,
+                  //         ),
+                  //         errorMessage: 'Invalid Phone Number',
+                  //         autoValidate: false,
+                  //         selectorTextStyle: TextStyle(
+                  //           color: Colors.white,
+                  //           fontSize: 16.0,
+                  //           fontWeight: FontWeight.w500,
+                  //         ),
+                  //         inputBorder: InputBorder.none,
+                  //         inputDecoration: InputDecoration(
+                  //           border: InputBorder.none,
+                  //           contentPadding: EdgeInsets.only(left: 20.0),
+                  //           hintText: 'Phone Number',
+                  //           hintStyle: TextStyle(
+                  //               color: Colors.white,
+                  //               fontSize: 16.0,
+                  //               fontWeight: FontWeight.w500),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  // SizedBox(height: 20.0),
+                  // Padding(
+                  //   padding: EdgeInsets.only(right: 20.0, left: 20.0),
+                  //   child: Container(
+                  //     decoration: BoxDecoration(
+                  //       color: Colors.grey[200].withOpacity(0.3),
+                  //       borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                  //     ),
+                  //     child: TextField(
+                  //       style: TextStyle(
+                  //         color: Colors.white,
+                  //         fontSize: 16.0,
+                  //         fontWeight: FontWeight.w500,
+                  //       ),
+                  //       decoration: InputDecoration(
+                  //         contentPadding: EdgeInsets.only(left: 20.0),
+                  //         hintText: 'Username',
+                  //         hintStyle: TextStyle(
+                  //           color: Colors.white,
+                  //           fontSize: 16.0,
+                  //           fontWeight: FontWeight.w500,
+                  //         ),
+                  //         border: InputBorder.none,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  // SizedBox(height: 20.0),
                   Padding(
                     padding: EdgeInsets.only(right: 20.0, left: 20.0),
                     child: Container(
@@ -127,39 +172,17 @@ class Register extends StatelessWidget {
                         color: Colors.grey[200].withOpacity(0.3),
                         borderRadius: BorderRadius.all(Radius.circular(20.0)),
                       ),
-                      child: TextField(
+                      child: TextFormField(
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 16.0,
                           fontWeight: FontWeight.w500,
                         ),
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.only(left: 20.0),
-                          hintText: 'Username',
-                          hintStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w500,
-                          ),
-                          border: InputBorder.none,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Padding(
-                    padding: EdgeInsets.only(right: 20.0, left: 20.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200].withOpacity(0.3),
-                        borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                      ),
-                      child: TextField(
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w500,
-                        ),
+                        validator: (value) =>
+                            value.isEmpty ? 'Enter an email' : null,
+                        onChanged: (value) {
+                          email = value;
+                        },
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.only(left: 20.0),
                           hintText: 'Email',
@@ -181,12 +204,18 @@ class Register extends StatelessWidget {
                         color: Colors.grey[200].withOpacity(0.3),
                         borderRadius: BorderRadius.all(Radius.circular(20.0)),
                       ),
-                      child: TextField(
+                      child: TextFormField(
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 16.0,
                           fontWeight: FontWeight.w500,
                         ),
+                        onChanged: (value) {
+                          password = value;
+                        },
+                        validator: (value) => value.length < 6
+                            ? 'Enter a password 6+ chars long'
+                            : null,
                         obscureText: true,
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.only(left: 20.0),
@@ -209,12 +238,17 @@ class Register extends StatelessWidget {
                         color: Colors.grey[200].withOpacity(0.3),
                         borderRadius: BorderRadius.all(Radius.circular(20.0)),
                       ),
-                      child: TextField(
+                      child: TextFormField(
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 16.0,
                           fontWeight: FontWeight.w500,
                         ),
+                        onChanged: (value) {
+                          confirmpassword = value;
+                        },
+                        validator: (value) =>
+                            value != password ? 'Password did not match' : null,
                         obscureText: true,
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.only(left: 20.0),
@@ -234,12 +268,56 @@ class Register extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 20.0),
                     child: InkWell(
                       borderRadius: BorderRadius.circular(30.0),
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: OTPScreen()));
+                      onTap: () async {
+                        setState(() {
+                          showSpinner = true;
+                        });
+                        try {
+                          if (password == confirmpassword) {
+                            final newUser =
+                                await _auth.createUserWithEmailAndPassword(
+                                    email: email, password: password);
+                            if (newUser != null) {
+                              Navigator.pushNamed(context, Home.id);
+                            }
+                            setState(() {
+                              showSpinner = false;
+                            });
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content: Text('The password did not match.')));
+                            setState(() {
+                              showSpinner = false;
+                            });
+                          }
+                        } on FirebaseAuthException catch (e) {
+                          if (email == null) {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content: Text('Please enter your email')));
+                          } else if (password == null) {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content: Text('Please enter your password')));
+                          } else if (confirmpassword == null) {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content:
+                                    Text('Please re-enter your password')));
+                          } else if (e.code == 'invalid-email') {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content: Text(
+                                    'Incorrect e-mail type. Please enter the correct e-mail')));
+                          } else if (e.code == 'weak-password') {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content: Text(
+                                    'The password provided is too weak.')));
+                          } else if (e.code == 'email-already-in-use') {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content: Text(
+                                    'The account already exists for that email.')));
+                          }
+                          setState(() {
+                            showSpinner = false;
+                          });
+                        }
                       },
                       child: Container(
                         height: 50.0,

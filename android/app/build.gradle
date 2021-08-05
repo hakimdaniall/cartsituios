@@ -40,6 +40,7 @@ android {
         targetSdkVersion 30
         versionCode 4
         versionName '4.0'
+        multiDexEnabled true
     }
 
     buildTypes {
